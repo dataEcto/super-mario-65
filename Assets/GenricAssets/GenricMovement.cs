@@ -34,8 +34,8 @@ public class GenricMovement : MonoBehaviour
     public bool grounded = false;
     public float maxDistance;
     
-    
-    
+    //audio
+    public AudioSource walkingSound;
     
     void Start()
     {
@@ -53,10 +53,27 @@ public class GenricMovement : MonoBehaviour
         DoMove();
         DoGravity();
         Jumping();
-      
+
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
         mover.Move(velocity * Time.deltaTime);
+        
+        //Sound In Here?
+
+        if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D))
+        {
+
+            walkingSound.Play();
+
+           
+        }
+        else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+
+            walkingSound.Stop();
+        }
+
+
 
    
     }

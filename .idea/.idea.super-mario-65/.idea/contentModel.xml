@@ -10,6 +10,7 @@
           <e p="CameraLocking.cs" t="Include" />
           <e p="GenricCamera.cs" t="Include" />
           <e p="GenricMovement.cs" t="Include" />
+          <e p="JayWalkingSound.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

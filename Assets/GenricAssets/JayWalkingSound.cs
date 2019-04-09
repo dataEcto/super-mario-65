@@ -73,7 +73,9 @@ public class JayWalkingSound : MonoBehaviour
             walkingSound.Play();
 
            
-        }else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D)) {
+        }
+        else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+         {
 
             walkingSound.Stop();
           }

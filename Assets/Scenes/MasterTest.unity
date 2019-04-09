@@ -238,7 +238,7 @@ MonoBehaviour:
   accel: 10
   turnSpeed: 8
   jumpSpeed: 10
-  grav: 10
+  grav: 15
   grounded: 0
   maxDistance: 1.3
   walkingSound: {fileID: 830385208}
