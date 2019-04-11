@@ -246,7 +246,9 @@ public class JayWalkingSound : MonoBehaviour
                 velocity = Vector3.up * movementMultiplier;
                 JumpCount = JumpCount - 1;
             }
+
            
+
         }
 
         if (grounded == true)

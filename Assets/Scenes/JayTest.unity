@@ -207,9 +207,9 @@ MonoBehaviour:
   grounded: 0
   maxDistance: 1.2
   walkingSound: {fileID: 830385208}
-  movementMultiplier: 17
-  jumpMultiplier: 3
-  fallMultiplier: 2
+  movementMultiplier: 12
+  jumpMultiplier: 1.6
+  fallMultiplier: 4
   walkingMultiplier: 2
   JumpCount: 1
 --- !u!1 &552293303
