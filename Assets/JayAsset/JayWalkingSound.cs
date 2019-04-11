@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class JayWalkingSound : MonoBehaviour
 {
-  
+
     //OBJECT variables
     public Transform cam;
     private CharacterController mover;
@@ -26,7 +26,9 @@ public class JayWalkingSound : MonoBehaviour
     public float speed;
     public float accel;
     public float turnSpeed;
+
     public float jumpSpeed;
+
     //Below, we will lerp turnSpeed with these 2 values
     float turnSpeedLow;
     float turnSpeedHigh;
@@ -37,8 +39,19 @@ public class JayWalkingSound : MonoBehaviour
     public float maxDistance;
 
 
+
     //audio
     public AudioSource walkingSound;
+
+
+
+    //jump
+    public float movementMultiplier;
+    public float jumpMultiplier;
+    public float fallMultiplier;
+    public float walkingMultiplier;
+    public float JumpCount;
+    private float MaxJump = 1f;
 
 
 
@@ -49,8 +62,8 @@ public class JayWalkingSound : MonoBehaviour
         mover = GetComponent<CharacterController>();
         turnSpeedLow = turnSpeed;
         turnSpeedHigh = turnSpeed * 4;
-    }
 
+    }
 
     void Update()
     {
@@ -59,26 +72,72 @@ public class JayWalkingSound : MonoBehaviour
         CalculateGround();
         DoMove();
         DoGravity();
-        Jumping();
+
+
 
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
         mover.Move(velocity * Time.deltaTime);
 
-        //Sound In Here?
+        Jumping();
 
-        if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
+            Input.GetKeyDown(KeyCode.D))
         {
+
 
             walkingSound.Play();
 
-           
+
         }
-        else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
-         {
+        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
+                 Input.GetKeyUp(KeyCode.D))
+        {
+
+
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
+                Input.GetKeyDown(KeyCode.D))
+            {
+
+                walkingSound.Stop();
+            }
+
+
+            if (velocity.y < 0)
+            {
+                //player is falling down
+                //add to the existing velocity and multiply by gravity and multiply by time since
+                velocity = velocity + Vector3.up * Physics.gravity.y * fallMultiplier * Time.fixedDeltaTime;
+
+
+            }
+            else if (velocity.y > 0)
+            {
+                //player is jumping up
+                velocity = velocity + Vector3.up * Physics.gravity.y * jumpMultiplier * Time.fixedDeltaTime;
+            }
+
+
+
+        }
+        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
+                 Input.GetKeyUp(KeyCode.D))
+        {
 
             walkingSound.Stop();
-          }
+        }
+
+
+
+
+
+
+
+
+        //We finally move once DoMove has calculated the velocity, rather than
+        //at the same time
+        mover.Move(velocity * Time.deltaTime);
+
 
 
     }
@@ -119,6 +178,7 @@ public class JayWalkingSound : MonoBehaviour
 
 
     }
+
     public void DoMove()
     {
         //Relatively move with the cameras directoin
@@ -168,19 +228,47 @@ public class JayWalkingSound : MonoBehaviour
         }
 
         //We also set a limit to how long velocity.y can be decreased/increased.
-        velocity.y = Mathf.Clamp(velocity.y, -10, 10);
+        // velocity.y = Mathf.Clamp(velocity.y, -10, 10);
+
+
+        ////First we need to make sure if we are touching
+        ////the ground first.
+        ////This makes sure fall speed is consistent
+        //if (grounded)
+        //{
+        //    velocity.y = -0.5f;
+        //}
+        //else
+        //{
+        //    //Just changing the velocity to be going downwards.
+        //    velocity.y -= grav * Time.deltaTime;
+        //}
+
+        ////We also set a limit to how long velocity.y can be decreased/increased.
+        //velocity.y = Mathf.Clamp(velocity.y, -10, 10);
+
+
+
+
     }
 
     public void Jumping()
     {
-        if (grounded)
+        if (grounded && JumpCount >= 1f)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                velocity.y = jumpSpeed;
+                velocity = Vector3.up * movementMultiplier;
+
+
+                JumpCount = JumpCount - 1;
+
             }
+
+
         }
     }
+
 }
 
 

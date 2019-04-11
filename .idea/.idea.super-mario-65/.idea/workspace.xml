@@ -10,10 +10,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricMovement.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
+            <state relative-caret-position="754">
               <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
               <folding>
                 <marker date="1554821094207" expanded="false" signature="6:121" ph="..." />
@@ -46,10 +46,54 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/JayAsset/JayWalkingSound.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <marker date="1554993400038" expanded="true" signature="6:103" ph="..." />
+                <marker date="1554993400038" expanded="true" signature="150:6635" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="1092:1231" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="1250:3038" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="1380:1477" ph="/* We finally move once DoMove has calculated the velocity, rather than ... */" />
+                <marker date="1554993400038" expanded="true" signature="1691:1748" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="1896:2666" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="2062:2128" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="2162:2440" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="2193:2315" ph="/* player is falling down ... */" />
+                <marker date="1554993400038" expanded="true" signature="2477:2653" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="2814:2868" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="2885:2982" ph="/* We finally move once DoMove has calculated the velocity, rather than ... */" />
+                <marker date="1554993400038" expanded="true" signature="3065:3167" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="3202:3374" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="3409:3804" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="3684:3733" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="3746:3796" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="3830:5284" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="3845:3914" ph="/* Relatively move with the cameras directoin ... */" />
+                <marker date="1554993400038" expanded="true" signature="4043:4158" ph="/* As Velocity increases, our turn speed should be slower ... */" />
+                <marker date="1554993400038" expanded="true" signature="4293:4626" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="4636:4841" ph="/* then, we create a velocity that goes forward, which changes depending on the rotation ... */" />
+                <marker date="1554993400038" expanded="true" signature="5023:5205" ph="/* Now that we made sure everything but the Y is being affected, we finally change the velocity ... */" />
+                <marker date="1554993400038" expanded="true" signature="5313:6347" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="5329:5455" ph="/* First we need to make sure if we are touching ... */" />
+                <marker date="1554993400038" expanded="true" signature="5477:5529" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="5542:5675" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="5685:5815" ph="/* We also set a limit to how long velocity.y can be decreased/increased. ... */" />
+                <marker date="1554993400038" expanded="true" signature="5826:6337" ph="/* First we need to make sure if we are touching ... */" />
+                <marker date="1554993400038" expanded="true" signature="6374:6632" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="6421:6626" ph="{...}" />
+                <marker date="1554993400038" expanded="true" signature="6480:6614" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="288">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <marker date="1554732002873" expanded="false" signature="6:101" ph="..." />
@@ -68,7 +112,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../mind-cleaning/Int Midterm/Assets/Scripts/RaycastBehavior.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/JayWalkingSound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/JayAsset/JayWalkingSound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/CameraLocking.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs" root0="FORCE_HIGHLIGHTING" />
@@ -80,6 +124,7 @@
         <option value="$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/GenricAssets/JayWalkingSound.cs" />
         <option value="$PROJECT_DIR$/Assets/GenricAssets/GenricMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/JayAsset/JayWalkingSound.cs" />
       </list>
     </option>
   </component>
@@ -144,11 +189,12 @@
       <workItem from="1554667770877" duration="4543000" />
       <workItem from="1554734985410" duration="1224000" />
       <workItem from="1554819987464" duration="2653000" />
+      <workItem from="1554993138845" duration="260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14489000" />
+    <option name="totallyTimeSpent" value="14749000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -263,22 +309,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <marker date="1554732002873" expanded="false" signature="6:101" ph="..." />
-            <marker date="1554732002873" expanded="true" signature="144:785" ph="{...}" />
-            <marker date="1554732002873" expanded="true" signature="320:341" ph="{...}" />
-            <marker date="1554732002873" expanded="true" signature="365:783" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricMovement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
+        <state relative-caret-position="754">
           <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
           <folding>
             <marker date="1554821094207" expanded="false" signature="6:121" ph="..." />
@@ -306,6 +339,61 @@
             <marker date="1554821094207" expanded="true" signature="4655:4822" ph="{...}" />
             <marker date="1554821094207" expanded="true" signature="4683:4816" ph="{...}" />
             <marker date="1554821094207" expanded="true" signature="4738:4806" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <marker date="1554732002873" expanded="false" signature="6:101" ph="..." />
+            <marker date="1554732002873" expanded="true" signature="144:785" ph="{...}" />
+            <marker date="1554732002873" expanded="true" signature="320:341" ph="{...}" />
+            <marker date="1554732002873" expanded="true" signature="365:783" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/JayAsset/JayWalkingSound.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <marker date="1554993400038" expanded="true" signature="6:103" ph="..." />
+            <marker date="1554993400038" expanded="true" signature="150:6635" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="1092:1231" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="1250:3038" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="1380:1477" ph="/* We finally move once DoMove has calculated the velocity, rather than ... */" />
+            <marker date="1554993400038" expanded="true" signature="1691:1748" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="1896:2666" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="2062:2128" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="2162:2440" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="2193:2315" ph="/* player is falling down ... */" />
+            <marker date="1554993400038" expanded="true" signature="2477:2653" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="2814:2868" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="2885:2982" ph="/* We finally move once DoMove has calculated the velocity, rather than ... */" />
+            <marker date="1554993400038" expanded="true" signature="3065:3167" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="3202:3374" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="3409:3804" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="3684:3733" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="3746:3796" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="3830:5284" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="3845:3914" ph="/* Relatively move with the cameras directoin ... */" />
+            <marker date="1554993400038" expanded="true" signature="4043:4158" ph="/* As Velocity increases, our turn speed should be slower ... */" />
+            <marker date="1554993400038" expanded="true" signature="4293:4626" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="4636:4841" ph="/* then, we create a velocity that goes forward, which changes depending on the rotation ... */" />
+            <marker date="1554993400038" expanded="true" signature="5023:5205" ph="/* Now that we made sure everything but the Y is being affected, we finally change the velocity ... */" />
+            <marker date="1554993400038" expanded="true" signature="5313:6347" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="5329:5455" ph="/* First we need to make sure if we are touching ... */" />
+            <marker date="1554993400038" expanded="true" signature="5477:5529" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="5542:5675" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="5685:5815" ph="/* We also set a limit to how long velocity.y can be decreased/increased. ... */" />
+            <marker date="1554993400038" expanded="true" signature="5826:6337" ph="/* First we need to make sure if we are touching ... */" />
+            <marker date="1554993400038" expanded="true" signature="6374:6632" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="6421:6626" ph="{...}" />
+            <marker date="1554993400038" expanded="true" signature="6480:6614" ph="{...}" />
           </folding>
         </state>
       </provider>

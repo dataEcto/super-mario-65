@@ -6,20 +6,31 @@
     <e p="C:\Users\Game Center Admin\Documents\super-mario-65" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Eleanor'sStuff" t="Include">
+          <e p="Script" t="Include">
+            <e p="EleanorCamera.cs" t="Include" />
+            <e p="EleanorMovement.cs" t="Include" />
+            <e p="GenricMovementElVer.cs" t="Include" />
+            <e p="Trigger.cs" t="Include" />
+          </e>
+        </e>
         <e p="GenricAssets" t="Include">
           <e p="CameraLocking.cs" t="Include" />
           <e p="GenricCamera.cs" t="Include" />
           <e p="GenricMovement.cs" t="Include" />
+        </e>
+        <e p="JayAsset" t="Include">
           <e p="JayWalkingSound.cs" t="Include" />
+        </e>
+        <e p="MaterScript" t="Include">
+          <e p="MasterMovement.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="super-mario-65.sln" t="IncludeFlat" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
