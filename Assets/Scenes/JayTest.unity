@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -151,6 +151,7 @@ MonoBehaviour:
   grav: 10
   grounded: 0
   maxDistance: 5
+  walkingSound: {fileID: 0}
 --- !u!143 &163305777
 CharacterController:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ MonoBehaviour:
   jumpMultiplier: 3
   fallMultiplier: 2
   walkingMultiplier: 2
-  JumpCount: 2
+  JumpCount: 24.93
 --- !u!1 &552293303
 GameObject:
   m_ObjectHideFlags: 0
