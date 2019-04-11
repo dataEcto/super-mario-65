@@ -26,19 +26,21 @@ public class pickupScript : MonoBehaviour
         updateStars();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "star")
+        if (other.gameObject.CompareTag("star"))
         {
             stars = stars + 1;
+            Debug.Log(stars);
             other.gameObject.SetActive(false);
             
             
         }
 
-        if (other.gameObject.tag == "coin")
+        if (other.gameObject.CompareTag("coin"))
         {
             coins = coins + 1;
+            Debug.Log(coins);
             other.gameObject.SetActive(false);
             
         }
