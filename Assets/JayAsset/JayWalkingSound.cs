@@ -51,7 +51,7 @@ public class JayWalkingSound : MonoBehaviour
     public float fallMultiplier;
     public float walkingMultiplier;
     public float JumpCount;
-    private float MaxJump = 1f;
+    private float MaxJump;
 
 
 
@@ -62,6 +62,10 @@ public class JayWalkingSound : MonoBehaviour
         mover = GetComponent<CharacterController>();
         turnSpeedLow = turnSpeed;
         turnSpeedHigh = turnSpeed * 4;
+
+        MaxJump = 1f;
+
+       
 
     }
 
@@ -95,37 +99,32 @@ public class JayWalkingSound : MonoBehaviour
         {
 
 
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
-                Input.GetKeyDown(KeyCode.D))
-            {
+           
 
                 walkingSound.Stop();
-            }
+           
 
-
-            if (velocity.y < 0)
-            {
-                //player is falling down
-                //add to the existing velocity and multiply by gravity and multiply by time since
-                velocity = velocity + Vector3.up * Physics.gravity.y * fallMultiplier * Time.fixedDeltaTime;
-
-
-            }
-            else if (velocity.y > 0)
-            {
-                //player is jumping up
-                velocity = velocity + Vector3.up * Physics.gravity.y * jumpMultiplier * Time.fixedDeltaTime;
-            }
 
 
 
         }
-        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
-                 Input.GetKeyUp(KeyCode.D))
+
+
+
+        if (velocity.y < 0)
         {
+            //player is falling down
+            //add to the existing velocity and multiply by gravity and multiply by time since
+            velocity = velocity + Vector3.up * Physics.gravity.y * fallMultiplier * Time.fixedDeltaTime;
 
-            walkingSound.Stop();
+
         }
+        else if (velocity.y > 0)
+        {
+            //player is jumping up
+            velocity = velocity + Vector3.up * Physics.gravity.y * jumpMultiplier * Time.fixedDeltaTime;
+        }
+
 
 
 
@@ -214,9 +213,12 @@ public class JayWalkingSound : MonoBehaviour
     public void DoGravity()
     {
 
-        //First we need to make sure if we are touching
-        //the ground first.
-        //This makes sure fall speed is consistent
+       
+
+
+        ////First we need to make sure if we are touching
+        ////the ground first.
+        ////This makes sure fall speed is consistent
         if (grounded)
         {
             velocity.y = -0.5f;
@@ -227,23 +229,6 @@ public class JayWalkingSound : MonoBehaviour
             velocity.y -= grav * Time.deltaTime;
         }
 
-        //We also set a limit to how long velocity.y can be decreased/increased.
-        // velocity.y = Mathf.Clamp(velocity.y, -10, 10);
-
-
-        ////First we need to make sure if we are touching
-        ////the ground first.
-        ////This makes sure fall speed is consistent
-        //if (grounded)
-        //{
-        //    velocity.y = -0.5f;
-        //}
-        //else
-        //{
-        //    //Just changing the velocity to be going downwards.
-        //    velocity.y -= grav * Time.deltaTime;
-        //}
-
         ////We also set a limit to how long velocity.y can be decreased/increased.
         //velocity.y = Mathf.Clamp(velocity.y, -10, 10);
 
@@ -252,22 +237,25 @@ public class JayWalkingSound : MonoBehaviour
 
     }
 
-    public void Jumping()
+    void Jumping()
     {
-        if (grounded && JumpCount >= 1f)
+        if (JumpCount >= 1f && grounded == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 velocity = Vector3.up * movementMultiplier;
-
-
                 JumpCount = JumpCount - 1;
-
             }
-
-
+           
         }
+
+        if (grounded == true)
+        {
+            JumpCount = 1;
+        }
+
     }
+
 
 }
 
