@@ -15,6 +15,7 @@ public class GenricMovementElVer : MonoBehaviour
     
     //INPUT Variables
     private Vector2 input;
+    private float previousInputY;
   
 
     //PHYSICS Variables
@@ -121,8 +122,17 @@ public class GenricMovementElVer : MonoBehaviour
         }
         else
         {
-            
-            intention = transform.forward * 5 + transform.forward * input.y + transform.right * input.x;
+            intention = transform.forward * input.y + transform.right * input.x;
+
+            if (input.y * previousInputY <= 0 && input.y < 0)
+            {
+                intention += transform.forward * -5;
+            }
+
+            else
+            {
+                intention += transform.forward * 5;
+            }
         }
 
         float topSpeed = velocity.magnitude/turnSpeed;
@@ -148,7 +158,8 @@ public class GenricMovementElVer : MonoBehaviour
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
         //We just use the default velocity.Y as that is being affected by gravity alone
         velocity = new Vector3(velocityXZ.x,velocity.y,velocityXZ.z);
-        
+        previousInputY = input.y;
+
     }
 
     public void DoGravity()
