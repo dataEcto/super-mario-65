@@ -47,7 +47,7 @@ public class JayWalkingSound : MonoBehaviour
     public float fallMultiplier;
     public float walkingMultiplier;
     public float JumpCount;
-    private float MaxJump;
+    private float MaxJump = 1f;
 
 
 
@@ -57,6 +57,8 @@ public class JayWalkingSound : MonoBehaviour
         mover = GetComponent<CharacterController>();
         turnSpeedLow = turnSpeed;
         turnSpeedHigh = turnSpeed * 4;
+
+        JumpCount = 1f;
 
       
     }
@@ -198,12 +200,18 @@ public class JayWalkingSound : MonoBehaviour
 
     public void Jumping()
     {
-        if (grounded)
+        if (grounded && JumpCount >=1f)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown (KeyCode.Space))
             {
                 velocity = Vector3.up * movementMultiplier;
+
+
+                JumpCount = JumpCount - 1;
+               
             }
+
+
         }
     }
 }
