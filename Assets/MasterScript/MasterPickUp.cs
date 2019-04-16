@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class pickupScript : MonoBehaviour
+public class MasterPickUp : MonoBehaviour
 {
     public int coins;
 

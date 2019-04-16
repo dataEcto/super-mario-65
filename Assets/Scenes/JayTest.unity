@@ -151,6 +151,7 @@ MonoBehaviour:
   grav: 10
   grounded: 0
   maxDistance: 5
+  walkingSound: {fileID: 0}
 --- !u!143 &163305777
 CharacterController:
   m_ObjectHideFlags: 0
@@ -204,13 +205,13 @@ MonoBehaviour:
   jumpSpeed: 0
   grav: 10
   grounded: 0
-  maxDistance: 5
+  maxDistance: 1.2
   walkingSound: {fileID: 830385208}
-  movementMultiplier: 7
-  jumpMultiplier: 3
-  fallMultiplier: 2
+  movementMultiplier: 12
+  jumpMultiplier: 1.6
+  fallMultiplier: 4
   walkingMultiplier: 2
-  JumpCount: 2
+  JumpCount: 1
 --- !u!1 &552293303
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +422,7 @@ GameObject:
   - component: {fileID: 963404581}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -786,7 +787,7 @@ GameObject:
   - component: {fileID: 1691398002}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

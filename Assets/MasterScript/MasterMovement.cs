@@ -15,6 +15,7 @@ public class MasterMovement : MonoBehaviour
     
     //INPUT Variables
     private Vector2 input;
+    private float previousInputY;
   
 
     //PHYSICS Variables
@@ -35,8 +36,20 @@ public class MasterMovement : MonoBehaviour
     public float maxDistance;
 
     public static MasterMovement Singleton;
-    
+
     public bool LockIntention;
+    
+    //audio
+    public AudioSource walkingSound;
+    
+    //jump
+    public float movementMultiplier;
+    public float jumpMultiplier;
+    public float fallMultiplier;
+    public float walkingMultiplier;
+    public float JumpCount;
+    private float MaxJump;
+
 
 
     void Awake()
@@ -56,6 +69,8 @@ public class MasterMovement : MonoBehaviour
         mover = GetComponent<CharacterController>();
         turnSpeedLow = turnSpeed;
         turnSpeedHigh = turnSpeed * 4;
+        
+        MaxJump = 1f;
     }
 
     
@@ -72,7 +87,48 @@ public class MasterMovement : MonoBehaviour
         //at the same time
         mover.Move(velocity * Time.deltaTime);
 
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
+            Input.GetKeyDown(KeyCode.D))
+        {
+
+
+            walkingSound.Play();
+
+
+        }
+        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
+                 Input.GetKeyUp(KeyCode.D))
+        {
+
+
+           
+
+            walkingSound.Stop();
    
+
+        }
+        
+        if (velocity.y < 0)
+        {
+            //player is falling down
+            //add to the existing velocity and multiply by gravity and multiply by time since
+            velocity = velocity + Vector3.up * Physics.gravity.y * fallMultiplier * Time.fixedDeltaTime;
+
+
+        }
+        else if (velocity.y > 0)
+        {
+            //player is jumping up
+            velocity = velocity + Vector3.up * Physics.gravity.y * jumpMultiplier * Time.fixedDeltaTime;
+        }
+
+
+
+
+
+
+        
+        
     }
 
     public void DoInput()
@@ -121,8 +177,17 @@ public class MasterMovement : MonoBehaviour
         }
         else
         {
-            
-            intention = transform.forward * 5 + transform.forward * input.y + transform.right * input.x;
+            intention = transform.forward * input.y + transform.right * input.x;
+
+            if (input.y * previousInputY <= 0 && input.y < 0)
+            {
+                intention += transform.forward * -5;
+            }
+
+            else
+            {
+                intention += transform.forward * 5;
+            }
         }
 
         float topSpeed = velocity.magnitude/turnSpeed;
@@ -148,7 +213,8 @@ public class MasterMovement : MonoBehaviour
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
         //We just use the default velocity.Y as that is being affected by gravity alone
         velocity = new Vector3(velocityXZ.x,velocity.y,velocityXZ.z);
-        
+        previousInputY = input.y;
+
     }
 
     public void DoGravity()
@@ -173,12 +239,25 @@ public class MasterMovement : MonoBehaviour
 
     public void Jumping()
     {
-        if (grounded)
+        if (JumpCount >= 1f && grounded == true)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                velocity.y = jumpSpeed;
+                velocity = Vector3.up * movementMultiplier;
+                JumpCount = JumpCount - 1;
             }
+
+           
+
         }
+
+        if (grounded == true)
+        {
+            JumpCount = 1;
+        }
+
     }
-}
+
+    }
+
+

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - coin
   - star
+  - Ground
   layers:
   - Default
   - TransparentFX
