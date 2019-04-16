@@ -49,16 +49,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="416">
+              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
               <folding>
-                <marker date="1554824215251" expanded="false" signature="6:78" ph="..." />
-                <marker date="1554824215251" expanded="true" signature="116:566" ph="{...}" />
-                <marker date="1554824215251" expanded="true" signature="296:564" ph="{...}" />
+                <marker date="1555001326406" expanded="false" signature="6:116" ph="..." />
+                <marker date="1555001326406" expanded="true" signature="154:1235" ph="{...}" />
+                <marker date="1555001326406" expanded="true" signature="353:404" ph="{...}" />
+                <marker date="1555001326406" expanded="true" signature="469:911" ph="{...}" />
+                <marker date="1555001326406" expanded="true" signature="557:905" ph="{...}" />
+                <marker date="1555001326406" expanded="true" signature="960:1228" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.2.8/Runtime/Behaviours/CinemachineBrain.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="928">
+              <caret line="84" column="42" selection-start-line="84" selection-start-column="42" selection-end-line="85" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -91,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovementElVer.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-48">
-              <caret line="117" column="24" lean-forward="true" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
+              <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
               <folding>
                 <marker date="1554998327989" expanded="false" signature="6:121" ph="..." />
                 <marker date="1554998327989" expanded="true" signature="171:5075" ph="{...}" />
@@ -139,12 +151,17 @@
       <find>intention</find>
       <find>character</find>
       <find>turnSpeedHigh</find>
+      <find>time</find>
+      <find>defaultblend</find>
+      <find>e</find>
+      <find>cinemachineblenddefinition</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.2.8/Runtime/Behaviours/CinemachineBrain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovementElVer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -158,13 +175,13 @@
         <option value="$PROJECT_DIR$/Assets/GenricAssets/GenricMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovement(ElVer).cs" />
         <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs" />
         <option value="$PROJECT_DIR$/Assets/MasterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovementElVer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="width" value="1920" />
     <option name="height" value="1047" />
   </component>
@@ -173,6 +190,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
@@ -205,8 +224,6 @@
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,11 +271,12 @@
       <updated>1554822564714</updated>
       <workItem from="1554822574104" duration="4920000" />
       <workItem from="1554992521956" duration="3743000" />
+      <workItem from="1555000659589" duration="668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8663000" />
+    <option name="totallyTimeSpent" value="9331000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,10 +288,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25053304" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2531983" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -354,30 +372,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/CameraManager.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/MasterMovement.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <marker date="1554824215251" expanded="false" signature="6:78" ph="..." />
-            <marker date="1554824215251" expanded="true" signature="116:566" ph="{...}" />
-            <marker date="1554824215251" expanded="true" signature="296:564" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1554820309851" expanded="false" signature="6:101" ph="..." />
-            <marker date="1554820309851" expanded="true" signature="144:785" ph="{...}" />
-            <marker date="1554820309851" expanded="true" signature="320:341" ph="{...}" />
-            <marker date="1554820309851" expanded="true" signature="365:783" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/CameraLocking.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -430,7 +424,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovementElVer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-48">
-          <caret line="117" column="24" lean-forward="true" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
+          <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
           <folding>
             <marker date="1554998327989" expanded="false" signature="6:121" ph="..." />
             <marker date="1554998327989" expanded="true" signature="171:5075" ph="{...}" />
@@ -462,6 +456,40 @@
             <marker date="1554998327989" expanded="true" signature="4906:5073" ph="{...}" />
             <marker date="1554998327989" expanded="true" signature="4934:5067" ph="{...}" />
             <marker date="1554998327989" expanded="true" signature="4989:5057" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1554820309851" expanded="false" signature="6:101" ph="..." />
+            <marker date="1554820309851" expanded="true" signature="144:785" ph="{...}" />
+            <marker date="1554820309851" expanded="true" signature="320:341" ph="{...}" />
+            <marker date="1554820309851" expanded="true" signature="365:783" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.2.8/Runtime/Behaviours/CinemachineBrain.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="84" column="42" selection-start-line="84" selection-start-column="42" selection-end-line="85" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding>
+            <marker date="1555001326406" expanded="false" signature="6:116" ph="..." />
+            <marker date="1555001326406" expanded="true" signature="154:1235" ph="{...}" />
+            <marker date="1555001326406" expanded="true" signature="353:404" ph="{...}" />
+            <marker date="1555001326406" expanded="true" signature="469:911" ph="{...}" />
+            <marker date="1555001326406" expanded="true" signature="557:905" ph="{...}" />
+            <marker date="1555001326406" expanded="true" signature="960:1228" ph="{...}" />
           </folding>
         </state>
       </provider>
