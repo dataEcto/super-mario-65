@@ -22,8 +22,8 @@ public class MasterPickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateCoins();
-        updateStars();
+      //  updateCoins();
+       // updateStars();
     }
 
     private void OnTriggerEnter(Collider other)

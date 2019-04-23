@@ -81,16 +81,15 @@ public class GenricMovement : MonoBehaviour
     void Update()
     {
        
-     
+        DoInput();
         CalculateGround();
-        
+        CalculateCamera();
         //Only do this function if not on slide
+        DoMove();
         if (stopRotating == false)
         {
-            DoMove();
-            DoInput();
-            CalculateCamera();
-           
+         
+     
         }
         else
         {
