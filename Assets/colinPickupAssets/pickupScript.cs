@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class pickupScript : MonoBehaviour
 {
     public int coins;
@@ -11,6 +12,10 @@ public class pickupScript : MonoBehaviour
     public Canvas canvas;
     public TextMeshProUGUI _coinTextMeshProUgui;
     public TextMeshProUGUI _starTextMeshProUgui;
+
+    public GameObject Star;
+
+    public Animator thisAnimator;
 
     public AudioClip starCollectsound;
     // Start is called before the first frame update
@@ -55,4 +60,26 @@ public class pickupScript : MonoBehaviour
     {
         _starTextMeshProUgui.text = stars.ToString();
     }
+
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "star" && other.isTrigger == true) {
+
+            thisAnimator.Play("StarPickedUp");
+            Invoke("StarDisappear", 1.3f);
+
+           
+             }
+    }
+
+
+
+    void StarDisappear() {
+
+        Star.SetActive(false);
+      
+       
+         }
 }
