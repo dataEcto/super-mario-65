@@ -10,7 +10,15 @@ public class Trigger : MonoBehaviour
     // Camera List
     public GameObject PreviousCamera;
     public GameObject NewCamera;
-    public bool LockIntention;
+
+
+
+
+
+    public MasterMovement.Movement LocalMovementMode;
+
+
+    //public bool LockIntention;
     private CinemachineBrain brain;
 
     /*public enum TransitionMode
@@ -44,8 +52,13 @@ public class Trigger : MonoBehaviour
         PreviousCamera.SetActive(false);
         NewCamera.SetActive(true);
        // GenricMovementElVer.Singleton.LockIntention = LockIntention;
+<<<<<<< HEAD
        GenricMovement.Singleton.LockIntention = LockIntention;
         MasterMovement.Singleton.LockIntention = LockIntention;
+=======
+       // GenricMovement.Singleton.LockIntention = LockIntention;
+        MasterMovement.Singleton.MovementMode = LocalMovementMode;
+>>>>>>> ce93729316909e3b2e4e9bd5990411caf3f48f24
         Debug.Log("Enter");
 
     }
