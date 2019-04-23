@@ -313,6 +313,7 @@ MonoBehaviour:
   grounded: 0
   maxDistance: 1.1
   LockIntention: 0
+  MovementMode: 0
   walkingSound: {fileID: 830385208}
   movementMultiplier: 12
   jumpMultiplier: 1.6
@@ -702,7 +703,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668719668}
-  m_LocalRotation: {x: 0.006942104, y: 0.9914094, z: 0.11648219, w: -0.05908596}
+  m_LocalRotation: {x: 0.006942099, y: 0.9914094, z: 0.11648217, w: -0.05908593}
   m_LocalPosition: {x: 5.35, y: 2.3, z: -42.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1878,7 +1879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviousCamera: {fileID: 668719668}
   NewCamera: {fileID: 148516428}
-  LockIntention: 0
+  LocalMovementMode: 1
 --- !u!65 &1820433891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2057,7 +2058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviousCamera: {fileID: 148516428}
   NewCamera: {fileID: 969837930}
-  LockIntention: 1
+  LocalMovementMode: 0
 --- !u!1 &1864317559 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c043f064837d14cdf91329fb3106bc08,
@@ -2274,7 +2275,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983786596}
-  m_LocalRotation: {x: 0.006942104, y: 0.9914094, z: 0.11648219, w: -0.05908596}
+  m_LocalRotation: {x: 0.006942099, y: 0.9914094, z: 0.11648217, w: -0.05908593}
   m_LocalPosition: {x: 5.35, y: 2.3, z: -42.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2359,7 +2360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviousCamera: {fileID: 0}
   NewCamera: {fileID: 0}
-  LockIntention: 0
+  LocalMovementMode: 0
 --- !u!1 &2017529147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c043f064837d14cdf91329fb3106bc08,
