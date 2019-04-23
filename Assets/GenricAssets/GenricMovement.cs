@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class GenricMovement : MonoBehaviour
     
     //INPUT Variables
     private Vector2 input;
+    private float previousInputY;
   
 
     //PHYSICS Variables
@@ -33,49 +35,80 @@ public class GenricMovement : MonoBehaviour
     public float grav = 10f;
     public bool grounded = false;
     public float maxDistance;
+
+    public static GenricMovement Singleton;
+
+    public bool LockIntention;
     
     //audio
     public AudioSource walkingSound;
+    
+    //jump
+    public float movementMultiplier;
+    public float jumpMultiplier;
+    public float fallMultiplier;
+    public float walkingMultiplier;
+    public float JumpCount;
+    private float MaxJump;
+    
+    //Bool to stop Function
+    public bool stopRotating = false;
+
+
+
+    void Awake()
+    {
+        if (Singleton == null)
+        {
+            Singleton = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     
     void Start()
     {
         mover = GetComponent<CharacterController>();
         turnSpeedLow = turnSpeed;
         turnSpeedHigh = turnSpeed * 4;
+        
+        MaxJump = 1f;
     }
 
     
     void Update()
     {
+       
         DoInput();
-        CalculateCamera();
         CalculateGround();
+        CalculateCamera();
+        //Only do this function if not on slide
         DoMove();
+        if (stopRotating == false)
+        {
+         
+     
+        }
+        else
+        {
+            Debug.Log("stop functions");
+        }
+   
         DoGravity();
         Jumping();
-
+      
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
         mover.Move(velocity * Time.deltaTime);
+
+      
+        DoSound();
+
+
         
-        //Sound In Here?
-
-        if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D))
-        {
-
-            walkingSound.Play();
-
-           
-        }
-        else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
-        {
-
-            walkingSound.Stop();
-        }
-
-
-
-   
+        
     }
 
     public void DoInput()
@@ -118,7 +151,25 @@ public class GenricMovement : MonoBehaviour
     {
         //Relatively move with the cameras directoin
         //(Up and Right)
-        Vector3 intention = camF*input.y + camR*input.x;
+        if (LockIntention)
+        {
+            intention = camF*input.y + camR*input.x;
+        }
+        else
+        {
+            intention = transform.forward * input.y + transform.right * input.x;
+          
+
+            if (input.y * previousInputY <= 0 && input.y < 0)
+            {
+                intention += transform.forward * -5;
+            }
+
+            else
+            {
+                intention += transform.forward * 5;
+            }
+        }
 
         float topSpeed = velocity.magnitude/turnSpeed;
         
@@ -143,7 +194,10 @@ public class GenricMovement : MonoBehaviour
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
         //We just use the default velocity.Y as that is being affected by gravity alone
         velocity = new Vector3(velocityXZ.x,velocity.y,velocityXZ.z);
+        previousInputY = input.y;
         
+        Debug.Log("Move");
+
     }
 
     public void DoGravity()
@@ -168,12 +222,64 @@ public class GenricMovement : MonoBehaviour
 
     public void Jumping()
     {
-        if (grounded)
+        if (JumpCount >= 1f && grounded == true)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                velocity.y = jumpSpeed;
+                velocity = Vector3.up * movementMultiplier;
+                JumpCount = JumpCount - 1;
             }
+
+           
+
         }
+
+        if (grounded == true)
+        {
+            JumpCount = 1;
+        }
+
+    }
+
+    public void DoSound()
+    {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
+            Input.GetKeyDown(KeyCode.D))
+        {
+
+
+            walkingSound.Play();
+
+
+        }
+        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
+                 Input.GetKeyUp(KeyCode.D))
+        {
+
+
+           
+
+            walkingSound.Stop();
+   
+
+        }
+        
+        if (velocity.y < 0)
+        {
+            //player is falling down
+            //add to the existing velocity and multiply by gravity and multiply by time since
+            velocity = velocity + Vector3.up * Physics.gravity.y * fallMultiplier * Time.fixedDeltaTime;
+
+
+        }
+        else if (velocity.y > 0)
+        {
+            //player is jumping up
+            velocity = velocity + Vector3.up * Physics.gravity.y * jumpMultiplier * Time.fixedDeltaTime;
+        }
+
+
     }
 }
+
+

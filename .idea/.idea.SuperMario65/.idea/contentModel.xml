@@ -27,6 +27,7 @@
         </e>
         <e p="MasterScript" t="Include">
           <e p="MasterMovement.cs" t="Include" />
+          <e p="MasterPickUp.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
