@@ -39,6 +39,7 @@ public class MasterMovement : MonoBehaviour
 
     public bool LockIntention;
 
+    //Camera Stuff
     public enum Movement
     {
         Follow,
@@ -47,6 +48,10 @@ public class MasterMovement : MonoBehaviour
     }
 
     public Movement MovementMode;
+   
+    public Camera CamFollow;
+    public Camera CamInverse;
+    public Camera CamNatural;
     
     
     //audio
@@ -135,17 +140,15 @@ public class MasterMovement : MonoBehaviour
 
 
 
+        Debug.Log("The " + MovementMode);
 
 
-
-        
-        
     }
 
     public void DoInput()
     {
         
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical"));
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
     }
     
@@ -178,6 +181,8 @@ public class MasterMovement : MonoBehaviour
         
         
     }
+
+    //Jay Added some stuff here lol
     public void DoMove()
     {
         //Relatively move with the cameras directoin
@@ -185,6 +190,8 @@ public class MasterMovement : MonoBehaviour
         if (MovementMode == Movement.Follow)
         {
             intention = camF*input.y + camR*input.x;
+             MarioRotation();
+            velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
         }
         else if (MovementMode == Movement.Natural)
         {
@@ -193,25 +200,36 @@ public class MasterMovement : MonoBehaviour
             if (input.y * previousInputY <= 0 && input.y < 0)
             {
                 intention += transform.forward * -5;
+                 MarioRotation();
+                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
             }
 
             else
             {
                 intention += transform.forward * 5;
+                 MarioRotation();
+                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
             }
         }
         else if (MovementMode == Movement.Inverse)
         {
             intention = transform.forward * -input.y + transform.right * -input.x;
 
+
             if (input.y * previousInputY <= 0 && input.y > 0)
             {
                 intention += transform.forward * -5;
+                MarioRotationAlternate();
+                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+
             }
 
             else
             {
                 intention += transform.forward * 5;
+                MarioRotationAlternate();
+                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+
             }
         }
 
@@ -221,13 +239,7 @@ public class MasterMovement : MonoBehaviour
         //within the range of 0 movement speed to topSpeed
         turnSpeed = Mathf.Lerp(turnSpeedHigh,turnSpeedLow, topSpeed );
         //If there is input...
-        if (input.magnitude > 0)
-        {
-            //....We will get the rotation of the camera, determing the direction we face
-            Quaternion rot = Quaternion.LookRotation(intention);
-            //And rotate the player in that direction.
-            transform.rotation = Quaternion.Lerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
-        }
+      
         
         //then, we create a velocity that goes forward, which changes depending on the rotation
         //First, though, we get rid of the Velocity that affects the Y axis
@@ -237,7 +249,11 @@ public class MasterMovement : MonoBehaviour
         velocityXZ = Vector3.Lerp(velocityXZ, transform.forward*input.magnitude * speed, accel * Time.deltaTime);
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
         //We just use the default velocity.Y as that is being affected by gravity alone
-        velocity = new Vector3(velocityXZ.x,velocity.y,velocityXZ.z);
+       
+       
+          
+       
+
         previousInputY = input.y;
 
     }
@@ -283,6 +299,36 @@ public class MasterMovement : MonoBehaviour
 
     }
 
+    //Jat stuff
+    public void MarioRotation() {
+
+        //....We will get the rotation of the camera, determing the direction we face
+        Quaternion rot = Quaternion.LookRotation(intention);
+        ////And rotate the player in that direction.
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
+
     }
+
+    //Jay Stuff that fixed mario spinning when rapidly pressing W
+    public void MarioRotationAlternate() {
+
+
+
+        if (Input.GetKey(KeyCode.A)) {
+
+            this.transform.Rotate(0, -3, 0);
+         
+           }
+
+
+        if (Input.GetKey(KeyCode.D))
+        {
+
+            this.transform.Rotate(0, 3, 0);
+
+        }
+
+    }
+}
 
 
