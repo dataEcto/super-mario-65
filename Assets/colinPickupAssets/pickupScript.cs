@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+//using TMPro;
 
 public class pickupScript : MonoBehaviour
 {
@@ -9,10 +9,12 @@ public class pickupScript : MonoBehaviour
 
     public int stars;
     public Canvas canvas;
-    public TextMeshProUGUI _coinTextMeshProUgui;
-    public TextMeshProUGUI _starTextMeshProUgui;
+//    public TextMeshProUGUI _coinTextMeshProUgui;
+//    public TextMeshProUGUI _starTextMeshProUgui;
 
     public AudioClip starCollectsound;
+
+    public AudioClip coinsCollectSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,11 +50,11 @@ public class pickupScript : MonoBehaviour
 
     void updateCoins()
     {
-        _coinTextMeshProUgui.text = coins.ToString();
+       // _coinTextMeshProUgui.text = coins.ToString();
     }
 
     void updateStars()
     {
-        _starTextMeshProUgui.text = stars.ToString();
+      //  _starTextMeshProUgui.text = stars.ToString();
     }
 }
