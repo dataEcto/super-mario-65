@@ -6,9 +6,6 @@
     <e p="D:\01_NYU\Spring 2019\SuperMario65" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="colinPickupAssets" t="Include">
-          <e p="pickupScript.cs" t="Include" />
-        </e>
         <e p="Eleanor'sStuff" t="Include">
           <e p="Script" t="Include">
             <e p="EleanorCamera.cs" t="Include" />
@@ -19,6 +16,7 @@
         </e>
         <e p="GenricAssets" t="Include">
           <e p="CameraLocking.cs" t="Include" />
+          <e p="DisableCCTrigger.cs" t="Include" />
           <e p="GenricCamera.cs" t="Include" />
           <e p="GenricMovement.cs" t="Include" />
         </e>

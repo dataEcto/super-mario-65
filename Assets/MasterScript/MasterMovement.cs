@@ -38,6 +38,16 @@ public class MasterMovement : MonoBehaviour
     public static MasterMovement Singleton;
 
     public bool LockIntention;
+
+    public enum Movement
+    {
+        Follow,
+        Natural,
+        Inverse
+    }
+
+    public Movement MovementMode;
+    
     
     //audio
     public AudioSource walkingSound;
@@ -71,6 +81,7 @@ public class MasterMovement : MonoBehaviour
         turnSpeedHigh = turnSpeed * 4;
         
         MaxJump = 1f;
+        MovementMode = Movement.Inverse;
     }
 
     
@@ -171,15 +182,29 @@ public class MasterMovement : MonoBehaviour
     {
         //Relatively move with the cameras directoin
         //(Up and Right)
-        if (LockIntention)
+        if (MovementMode == Movement.Follow)
         {
             intention = camF*input.y + camR*input.x;
         }
-        else
+        else if (MovementMode == Movement.Natural)
         {
             intention = transform.forward * input.y + transform.right * input.x;
 
             if (input.y * previousInputY <= 0 && input.y < 0)
+            {
+                intention += transform.forward * -5;
+            }
+
+            else
+            {
+                intention += transform.forward * 5;
+            }
+        }
+        else if (MovementMode == Movement.Inverse)
+        {
+            intention = transform.forward * -input.y + transform.right * -input.x;
+
+            if (input.y * previousInputY <= 0 && input.y > 0)
             {
                 intention += transform.forward * -5;
             }
