@@ -52,13 +52,13 @@ public class Trigger : MonoBehaviour
         PreviousCamera.SetActive(false);
         NewCamera.SetActive(true);
        // GenricMovementElVer.Singleton.LockIntention = LockIntention;
-<<<<<<< HEAD
-       GenricMovement.Singleton.LockIntention = LockIntention;
-        MasterMovement.Singleton.LockIntention = LockIntention;
-=======
+
+       //GenricMovement.Singleton.LockIntention = LockIntention;
+       // MasterMovement.Singleton.LockIntention = LockIntention;
+
        // GenricMovement.Singleton.LockIntention = LockIntention;
         MasterMovement.Singleton.MovementMode = LocalMovementMode;
->>>>>>> ce93729316909e3b2e4e9bd5990411caf3f48f24
+
         Debug.Log("Enter");
 
     }
