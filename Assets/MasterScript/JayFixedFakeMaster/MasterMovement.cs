@@ -220,7 +220,18 @@ public class MasterMovement : MonoBehaviour
             {
                 intention += transform.forward * -5;
                 MarioRotationAlternate();
-                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+
+                if (Input.GetKey(KeyCode.W))
+                {
+                    velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+                }
+                else if(Input.GetKey(KeyCode.S))
+                {
+
+                    velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+
+                }
+
 
             }
 
@@ -239,20 +250,38 @@ public class MasterMovement : MonoBehaviour
         //within the range of 0 movement speed to topSpeed
         turnSpeed = Mathf.Lerp(turnSpeedHigh,turnSpeedLow, topSpeed );
         //If there is input...
-      
-        
-        //then, we create a velocity that goes forward, which changes depending on the rotation
-        //First, though, we get rid of the Velocity that affects the Y axis
-        //Allowing for gravity to be used
-        velocityXZ = velocity;
-        velocityXZ.y = 0;
-        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward*input.magnitude * speed, accel * Time.deltaTime);
-        //Now that we made sure everything but the Y is being affected, we finally change the velocity
-        //We just use the default velocity.Y as that is being affected by gravity alone
-       
-       
-          
-       
+
+        if (MovementMode == Movement.Follow)
+        {
+            //then, we create a velocity that goes forward, which changes depending on the rotation
+            //First, though, we get rid of the Velocity that affects the Y axis
+            //Allowing for gravity to be used
+            velocityXZ = velocity;
+            velocityXZ.y = 0;
+            velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
+            //Now that we made sure everything but the Y is being affected, we finally change the velocity
+            //We just use the default velocity.Y as that is being affected by gravity alone
+        }else if(MovementMode == Movement.Natural) {
+            velocityXZ = velocity;
+            velocityXZ.y = 0;
+            velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
+        }else if(MovementMode == Movement.Inverse) {
+            if (Input.GetKey(KeyCode.W))
+            {
+                velocityXZ = velocity;
+                velocityXZ.y = 0;
+                velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * -1 * input.magnitude * speed, accel * Time.deltaTime);
+            }else if (Input.GetKey(KeyCode.S)) {
+
+                velocityXZ = velocity;
+                velocityXZ.y = 0;
+                velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
+               }
+        }
+
+
+
+
 
         previousInputY = input.y;
 
