@@ -64,6 +64,10 @@ public class MasterMovement : MonoBehaviour
     public float walkingMultiplier;
     public float JumpCount;
     private float MaxJump;
+    
+    
+    //Slide Variables
+    public bool stopRotating;
 
 
 
@@ -87,6 +91,8 @@ public class MasterMovement : MonoBehaviour
         
         MaxJump = 1f;
         MovementMode = Movement.Inverse;
+
+        stopRotating = false;
     }
 
     
@@ -95,35 +101,24 @@ public class MasterMovement : MonoBehaviour
         DoInput();
         CalculateCamera();
         CalculateGround();
-        DoMove();
         DoGravity();
         Jumping();
-      
+        
+        if (stopRotating == false)
+        {
+        
+            DoMove();
+            DoSound();
+        }
+        else
+        {
+             AlternateMove();
+        }
+
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
         mover.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
-            Input.GetKeyDown(KeyCode.D))
-        {
-
-
-            walkingSound.Play();
-
-
-        }
-        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
-                 Input.GetKeyUp(KeyCode.D))
-        {
-
-
-           
-
-            walkingSound.Stop();
-   
-
-        }
-        
         if (velocity.y < 0)
         {
             //player is falling down
@@ -258,6 +253,30 @@ public class MasterMovement : MonoBehaviour
 
     }
 
+    public void AlternateMove()
+    {
+        
+        Debug.Log("Altenrnate Moving");
+        intention = transform.forward * -input.y + transform.right * -input.x;
+
+
+        if (input.y * previousInputY <= 0 && input.y > 0)
+        {
+            intention += transform.forward * -5;
+            MarioRotationAlternate();
+            velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+
+        }
+
+        else
+        {
+            intention += transform.forward * 5;
+            MarioRotationAlternate();
+            velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+
+        }
+    }
+
     public void DoGravity()
     {
         
@@ -329,6 +348,34 @@ public class MasterMovement : MonoBehaviour
         }
 
     }
+    
+    //Made the sound Stuff its own function - Genric
+    public void DoSound()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
+            Input.GetKeyDown(KeyCode.D))
+        {
+
+
+            walkingSound.Play();
+
+
+        }
+        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
+                 Input.GetKeyUp(KeyCode.D))
+        {
+
+
+           
+
+            walkingSound.Stop();
+   
+
+        }
+
+    }
+    
 }
 
 
