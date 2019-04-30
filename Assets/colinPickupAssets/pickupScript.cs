@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class pickupScript : MonoBehaviour
 {
+   [Header("Ints")]
     public int coins;
 
     public int stars;
     public int lives;
+    [Header("UI")]
     public Canvas canvas;
     public TextMeshProUGUI _coinTextMeshProUgui;
     public TextMeshProUGUI _starTextMeshProUgui;
@@ -27,7 +30,7 @@ public class pickupScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setArray();
+        //setArray();
         lives = 3;
     }
 
@@ -61,36 +64,35 @@ public class pickupScript : MonoBehaviour
         if (other.gameObject.CompareTag("Killzone"))
         {
             lives = lives - 1;
+            if (lives == 0)
+            {
+                SceneManager.LoadScene(1);
+            }
         }
     }
 
     void updateCoins()
     {
-        _coinTextMeshProUgui.text = spriteArray[coins].ToString();
+        _coinTextMeshProUgui.text = coins.ToString();
         Debug.Log(coins);
         if (coins>=10)
         {
-            numbersAbove9();
         }
     }
 
     void updateStars()
     {
-        _starTextMeshProUgui.text = spriteArray[stars].ToString();
+        _starTextMeshProUgui.text =stars.ToString();
         Debug.Log(stars);
-        if (stars >= 10)
-        {
-            numbersAbove9();
-        }
     }
 
     void updateLives()
     {
-        _MarioLivesTextMeshProUgui.text = spriteArray[lives].ToString();
+        _MarioLivesTextMeshProUgui.text = lives.ToString();
         Debug.Log(lives);
     }
 //array holds sprite draw strings for TMPro
-    void setArray()
+   /* void setArray()
     {
         spriteArray[0] = "<sprite index = 0>";
         spriteArray[1] = "<sprite index = 1>";
@@ -104,7 +106,7 @@ public class pickupScript : MonoBehaviour
         spriteArray[9] = "<sprite index = 9>";
     }
 //Numbers above 9 adds sprite combinations to cover all numbers
-    void numbersAbove9()
+  /*  void numbersAbove9()
     {
         if (stars == 10)
         {
@@ -130,7 +132,7 @@ public class pickupScript : MonoBehaviour
             _coinTextMeshProUgui.text = spriteArray[0] + spriteArray[1];
         }
     }
-
+*/
 
 
 
