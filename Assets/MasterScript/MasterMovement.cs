@@ -39,7 +39,9 @@ public class MasterMovement : MonoBehaviour
 
     public bool LockIntention;
 
-    //Camera Stuff
+
+/*
+//Camera Stuff
     public enum Movement
     {
         Follow,
@@ -53,7 +55,7 @@ public class MasterMovement : MonoBehaviour
     public Camera CamInverse;
     public Camera CamNatural;
     
-    
+*/    
     //audio
     public AudioSource walkingSound;
     
@@ -90,7 +92,7 @@ public class MasterMovement : MonoBehaviour
         turnSpeedHigh = turnSpeed * 4;
         
         MaxJump = 1f;
-        MovementMode = Movement.Inverse;
+        //MovementMode = Movement.Inverse;
 
         stopRotating = false;
     }
@@ -106,15 +108,10 @@ public class MasterMovement : MonoBehaviour
         
         if (stopRotating == false)
         {
-        
             DoMove();
             DoSound();
         }
-        else
-        {
-             AlternateMove();
-        }
-
+       
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
         mover.Move(velocity * Time.deltaTime);
@@ -135,7 +132,7 @@ public class MasterMovement : MonoBehaviour
 
 
 
-        Debug.Log("The " + MovementMode);
+        //Debug.Log("The " + MovementMode);
 
 
     }
@@ -177,133 +174,37 @@ public class MasterMovement : MonoBehaviour
         
     }
 
-    //Jay Added some stuff here lol
+
     public void DoMove()
     {
         //Relatively move with the cameras directoin
         //(Up and Right)
-        if (MovementMode == Movement.Follow)
-        {
-            intention = camF*input.y + camR*input.x;
-             MarioRotation();
-            velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-        }
-        else if (MovementMode == Movement.Natural)
-        {
-            intention = transform.forward * input.y + transform.right * input.x;
+        Vector3 intention = camF * input.y + camR * input.x;
 
-            if (input.y * previousInputY <= 0 && input.y < 0)
-            {
-                intention += transform.forward * -5;
-                 MarioRotation();
-                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-            }
+        float topSpeed = velocity.magnitude / turnSpeed;
 
-            else
-            {
-                intention += transform.forward * 5;
-                 MarioRotation();
-                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-            }
-        }
-        else if (MovementMode == Movement.Inverse)
-        {
-            intention = transform.forward * -input.y + transform.right * -input.x;
-
-
-            if (input.y * previousInputY <= 0 && input.y > 0)
-            {
-                intention += transform.forward * -5;
-                MarioRotationAlternate();
-
-                if (Input.GetKey(KeyCode.W))
-                {
-                    velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-                }
-                else if(Input.GetKey(KeyCode.S))
-                {
-
-                    velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-
-                }
-
-
-            }
-
-            else
-            {
-                intention += transform.forward * 5;
-                MarioRotationAlternate();
-                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-
-            }
-        }
-
-        float topSpeed = velocity.magnitude/turnSpeed;
-        
         //As Velocity increases, our turn speed should be slower
         //within the range of 0 movement speed to topSpeed
-        turnSpeed = Mathf.Lerp(turnSpeedHigh,turnSpeedLow, topSpeed );
+        turnSpeed = Mathf.Lerp(turnSpeedHigh, turnSpeedLow, topSpeed);
         //If there is input...
-
-        if (MovementMode == Movement.Follow)
+        if (input.magnitude > 0)
         {
-            //then, we create a velocity that goes forward, which changes depending on the rotation
-            //First, though, we get rid of the Velocity that affects the Y axis
-            //Allowing for gravity to be used
-            velocityXZ = velocity;
-            velocityXZ.y = 0;
-            velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
-            //Now that we made sure everything but the Y is being affected, we finally change the velocity
-            //We just use the default velocity.Y as that is being affected by gravity alone
-        }else if(MovementMode == Movement.Natural) {
-            velocityXZ = velocity;
-            velocityXZ.y = 0;
-            velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
-        }else if(MovementMode == Movement.Inverse) {
-            if (Input.GetKey(KeyCode.W))
-            {
-                velocityXZ = velocity;
-                velocityXZ.y = 0;
-                velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * -1 * input.magnitude * speed, accel * Time.deltaTime);
-            }else if (Input.GetKey(KeyCode.S)) {
-
-                velocityXZ = velocity;
-                velocityXZ.y = 0;
-                velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
-               }
+            //....We will get the rotation of the camera, determing the direction we face
+            Quaternion rot = Quaternion.LookRotation(intention);
+            //And rotate the player in that direction.
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
 
+        //then, we create a velocity that goes forward, which changes depending on the rotation
+        //First, though, we get rid of the Velocity that affects the Y axis
+        //Allowing for gravity to be used
+        velocityXZ = velocity;
+        velocityXZ.y = 0;
+        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
+        //Now that we made sure everything but the Y is being affected, we finally change the velocity
+        //We just use the default velocity.Y as that is being affected by gravity alone
+        velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
 
-
-
-
-        previousInputY = input.y;
-
-    }
-
-    public void AlternateMove()
-    {
-        
-        Debug.Log("Altenrnate Moving");
-        intention = transform.forward * -input.y + transform.right * -input.x;
-
-
-        if (input.y * previousInputY <= 0 && input.y > 0)
-        {
-            intention += transform.forward * -5;
-            MarioRotationAlternate();
-            velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-
-        }
-
-        else
-        {
-            intention += transform.forward * 5;
-            MarioRotationAlternate();
-            velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-
-        }
     }
 
     public void DoGravity()
@@ -347,7 +248,7 @@ public class MasterMovement : MonoBehaviour
 
     }
 
-    //Jat stuff
+    //Jay stuff
     public void MarioRotation() {
 
         //....We will get the rotation of the camera, determing the direction we face
@@ -408,3 +309,7 @@ public class MasterMovement : MonoBehaviour
 }
 
 
+
+ 
+
+   
