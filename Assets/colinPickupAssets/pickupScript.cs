@@ -2,9 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 using TMPro;
 using UnityEngine.SceneManagement;
 
+=======
+//using TMPro;
+>>>>>>> e0043e268c51bdc65dbbb7a4125e18a85f9dd2aa
 
 public class pickupScript : MonoBehaviour
 {
@@ -15,6 +19,7 @@ public class pickupScript : MonoBehaviour
     public int lives;
     [Header("UI")]
     public Canvas canvas;
+<<<<<<< HEAD
     public TextMeshProUGUI _coinTextMeshProUgui;
     public TextMeshProUGUI _starTextMeshProUgui;
     public TextMeshProUGUI _MarioLivesTextMeshProUgui;
@@ -25,8 +30,14 @@ public class pickupScript : MonoBehaviour
     public GameObject Star;
 
     public Animator thisAnimator;
+=======
+//    public TextMeshProUGUI _coinTextMeshProUgui;
+//    public TextMeshProUGUI _starTextMeshProUgui;
+>>>>>>> e0043e268c51bdc65dbbb7a4125e18a85f9dd2aa
 
     public AudioClip starCollectsound;
+
+    public AudioClip coinsCollectSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,15 +84,20 @@ public class pickupScript : MonoBehaviour
 
     void updateCoins()
     {
+<<<<<<< HEAD
         _coinTextMeshProUgui.text = coins.ToString();
         Debug.Log(coins);
         if (coins>=10)
         {
         }
+=======
+       // _coinTextMeshProUgui.text = coins.ToString();
+>>>>>>> e0043e268c51bdc65dbbb7a4125e18a85f9dd2aa
     }
 
     void updateStars()
     {
+<<<<<<< HEAD
         _starTextMeshProUgui.text =stars.ToString();
         Debug.Log(stars);
     }
@@ -90,6 +106,9 @@ public class pickupScript : MonoBehaviour
     {
         _MarioLivesTextMeshProUgui.text = lives.ToString();
         Debug.Log(lives);
+=======
+      //  _starTextMeshProUgui.text = stars.ToString();
+>>>>>>> e0043e268c51bdc65dbbb7a4125e18a85f9dd2aa
     }
 //array holds sprite draw strings for TMPro
    /* void setArray()

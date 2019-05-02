@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a90261d01bc29a44187b4cc19382f8cd
+guid: 70241e32f7467334ea3224c29bf54e14
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -136,7 +136,38 @@ ModelImporter:
     4300046: Cube.023
     4300048: Cube.024
     4300050: Cube.025
-  externalObjects: {}
+    6400000: Cube
+    6400002: Cube.001
+    6400004: Cube.002
+    6400006: Cube.003
+    6400008: Cube.004
+    6400010: Cube.005
+    6400012: Cube.006
+    6400014: Cube.007
+    6400016: Cube.008
+    6400018: Cube.009
+    6400020: Cube.010
+    6400022: Cube.011
+    6400024: Cube.012
+    6400026: Cube.013
+    6400028: Cube.014
+    6400030: Cube.015
+    6400032: Cube.016
+    6400034: Cube.017
+    6400036: Cube.018
+    6400038: Cube.019
+    6400040: Cube.020
+    6400042: Cube.021
+    6400044: Cube.022
+    6400046: Cube.023
+    6400048: Cube.024
+    6400050: Cube.025
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   materials:
     importMaterials: 1
     materialName: 0
@@ -169,7 +200,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
