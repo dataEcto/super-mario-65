@@ -1144,6 +1144,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9147ee892ed04e44b893243f62bc5977, type: 2}
+    - target: {fileID: 9500000, guid: 5a353d6232d48554ab9d1cf4888ea647, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a353d6232d48554ab9d1cf4888ea647, type: 3}
 --- !u!1 &1631657745 stripped
@@ -1517,7 +1521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviousCamera: {fileID: 668719668}
   NewCamera: {fileID: 148516428}
-  LocalMovementMode: 0
 --- !u!65 &1820433891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1696,7 +1699,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviousCamera: {fileID: 148516428}
   NewCamera: {fileID: 969837930}
-  LocalMovementMode: 0
 --- !u!1 &1894737112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,7 +1893,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreviousCamera: {fileID: 0}
   NewCamera: {fileID: 0}
-  LocalMovementMode: 0
 --- !u!1 &2110917876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100024, guid: ab86863f17ae0114e98f7bb413e9798f,
