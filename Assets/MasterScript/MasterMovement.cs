@@ -69,7 +69,11 @@ public class MasterMovement : MonoBehaviour
     
     
     //Slide Variables
-    public bool stopRotating;
+    //This variable is turned on and runs all of the normal character controlling functions under
+    //an if statement
+    public bool characterFunctions;
+    public Rigidbody marioRB;
+    public float slideSpeed;
 
 
 
@@ -93,8 +97,9 @@ public class MasterMovement : MonoBehaviour
         
         MaxJump = 1f;
         //MovementMode = Movement.Inverse;
+        characterFunctions = true;
 
-        stopRotating = false;
+
     }
 
     
@@ -104,12 +109,19 @@ public class MasterMovement : MonoBehaviour
         CalculateCamera();
         CalculateGround();
         DoGravity();
-        Jumping();
+        DoSound();
         
-        if (stopRotating == false)
+        //Character Function allows these to run
+        if (characterFunctions)
         {
             DoMove();
-            DoSound();
+            Jumping();
+        }
+        //Once the player passes by the slide trigger, the rigidbody is activated
+        //Thus, we need to switch to a new movement type.
+        else
+        {
+           SlideMovement(input);
         }
        
         //We finally move once DoMove has calculated the velocity, rather than
@@ -141,6 +153,13 @@ public class MasterMovement : MonoBehaviour
     {
         
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        
+        //Slide Input to prevent upward movement
+        if (characterFunctions == false)
+        {
+            input = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+            Debug.Log("SLIDE INPUT");
+        }
 
     }
     
@@ -161,7 +180,7 @@ public class MasterMovement : MonoBehaviour
 
         Ray playerRay = new Ray(this.transform.position, -Vector3.up);
         RaycastHit hit;
-        Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.green);
+        Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.red);
         if (Physics.Raycast(transform.position, -Vector3.up, out hit, maxDistance))
         {
             grounded = true;
@@ -205,6 +224,12 @@ public class MasterMovement : MonoBehaviour
         //We just use the default velocity.Y as that is being affected by gravity alone
         velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
 
+    }
+
+    public void SlideMovement(Vector2 direction)
+    {
+        Debug.Log("Slide Movement");
+        marioRB.velocity = direction * slideSpeed;
     }
 
     public void DoGravity()
