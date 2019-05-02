@@ -265,8 +265,15 @@ public class MasterMovement : MonoBehaviour
         }
         else
         {
+            Debug.Log("fall");
            //Just changing the velocity to be going downwards.
            velocity.y -= grav * Time.deltaTime;
+
+           if (characterFunctions == false)
+           {
+               marioRB.velocity = Vector3.down * 10;
+               Debug.Log("RigidBody Falling");
+           }
         }
         
         //We also set a limit to how long velocity.y can be decreased/increased.
