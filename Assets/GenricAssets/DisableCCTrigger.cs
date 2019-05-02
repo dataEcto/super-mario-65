@@ -31,7 +31,6 @@ public class DisableCCTrigger : MonoBehaviour
     {
         
         ///Enable the Character Controller's Rigidbody
-        //PlayerController.enabled = false;
         PlayerRB.isKinematic = false;
         movementScript.characterFunctions = false;
         Debug.Log("Disable The Character Controller");

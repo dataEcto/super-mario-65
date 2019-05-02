@@ -73,6 +73,7 @@ public class MasterMovement : MonoBehaviour
     //an if statement
     public bool characterFunctions;
     public Rigidbody marioRB;
+    public GameObject mario;
     public float slideSpeed;
 
 
@@ -178,18 +179,38 @@ public class MasterMovement : MonoBehaviour
     public void CalculateGround()
     {
 
-        Ray playerRay = new Ray(this.transform.position, -Vector3.up);
-        RaycastHit hit;
-        Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.red);
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, maxDistance))
+        if (characterFunctions)
         {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
+            Ray playerRay = new Ray(this.transform.position, -Vector3.up);
+            RaycastHit hit;
+            Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.red);
+            if (Physics.Raycast(transform.position, -Vector3.up, out hit, maxDistance))
+            {
+                grounded = true;
+            }
+            else
+            {
+                grounded = false;
+            }
         }
         
+        
+       else 
+        {
+            Ray marioRay = new Ray(mario.transform.position, -Vector3.up);
+            RaycastHit marioHit;
+            Debug.DrawRay(marioRay.origin, marioRay.direction * maxDistance, Color.blue);
+            if (Physics.Raycast(transform.position, -Vector3.up, out marioHit, maxDistance))
+            {
+                grounded = true;
+            }
+            else
+            {
+                grounded = false;
+            }
+        }
+
+      
         
     }
 
@@ -250,6 +271,8 @@ public class MasterMovement : MonoBehaviour
         
         //We also set a limit to how long velocity.y can be decreased/increased.
         velocity.y = Mathf.Clamp(velocity.y, -10, 10);
+        
+     
     }
 
     public void Jumping()
