@@ -216,16 +216,7 @@ public class MasterMovement : MonoBehaviour
                 intention += transform.forward * -5;
                 MarioRotationAlternate();
 
-                if (Input.GetKey(KeyCode.W))
-                {
-                    velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-                }
-                else if(Input.GetKey(KeyCode.S))
-                {
-
-                    velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
-
-                }
+            
 
 
             }
@@ -234,7 +225,7 @@ public class MasterMovement : MonoBehaviour
             {
                 intention += transform.forward * 5;
                 MarioRotationAlternate();
-                velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+              
 
             }
         }
@@ -266,7 +257,11 @@ public class MasterMovement : MonoBehaviour
                 velocityXZ = velocity;
                 velocityXZ.y = 0;
                 velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * -1 * input.magnitude * speed, accel * Time.deltaTime);
-            }else if (Input.GetKey(KeyCode.S)) {
+            }
+           
+
+
+            if (Input.GetKey(KeyCode.S)) {
 
                 velocityXZ = velocity;
                 velocityXZ.y = 0;
