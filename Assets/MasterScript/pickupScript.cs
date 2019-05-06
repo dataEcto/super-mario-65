@@ -83,7 +83,7 @@ public class pickupScript : MonoBehaviour
     {
 
         _coinTextMeshProUgui.text = coins.ToString();
-        Debug.Log(coins);
+
         if (coins>=10)
         {
         }
@@ -96,13 +96,13 @@ public class pickupScript : MonoBehaviour
     {
 
         _starTextMeshProUgui.text =stars.ToString();
-        Debug.Log(stars);
+
     }
 
     void updateLives()
     {
         _MarioLivesTextMeshProUgui.text = lives.ToString();
-        Debug.Log(lives);
+
 
       //  _starTextMeshProUgui.text = stars.ToString();
 

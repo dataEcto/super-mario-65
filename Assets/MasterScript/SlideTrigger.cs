@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisableCCTrigger : MonoBehaviour
+public class SlideTrigger : MonoBehaviour
 {
     
     //This script is going to disable the Character Controller component of Mario
@@ -31,8 +31,8 @@ public class DisableCCTrigger : MonoBehaviour
     {
         
         ///Enable the Character Controller's Rigidbody
-        PlayerRB.isKinematic = false;
+        //PlayerRB.isKinematic = false;
         movementScript.characterFunctions = false;
-        Debug.Log("Disable The Character Controller");
+       
     }
 }
