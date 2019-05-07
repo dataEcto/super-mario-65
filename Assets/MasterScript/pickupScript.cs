@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 
@@ -34,9 +35,12 @@ public class pickupScript : MonoBehaviour
 
 
     //audio Control
-    public static bool coinPickUpSound;
-    public static bool starPickUpSound;
-    public static bool deathSound;
+
+    public AudioSource MarioAudio;
+    public AudioClip coinPickUpClip;
+    public AudioClip starPickUpClip;
+    public AudioClip deathClip;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -44,10 +48,8 @@ public class pickupScript : MonoBehaviour
         lives = 3;
 
         //audio static boolean, will not effect script
-        coinPickUpSound = false;
-        starPickUpSound = false;
-        deathSound = false;
-       
+
+        MarioAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class pickupScript : MonoBehaviour
         updateStars();
         updateLives();
     }
-// Triggers for coins, stars, and killzones
+    // Triggers for coins, stars, and killzones
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("star"))
@@ -65,46 +67,39 @@ public class pickupScript : MonoBehaviour
             stars = stars + 1;
             Debug.Log(stars);
             other.gameObject.SetActive(false);
-            starPickUpSound = true;
+            MarioAudio.PlayOneShot(starPickUpClip);
 
 
-        }else
-        {
-            starPickUpSound = false;
-        }
 
-        if (other.gameObject.CompareTag("coin"))
-        {
-            coins = coins + 1;
-            Debug.Log(coins);
-            other.gameObject.SetActive(false);
-            coinPickUpSound = true;
-            Debug.Log(coinPickUpSound);
 
-           
-        }
-        else 
-        {
-            coinPickUpSound = false;
-            Debug.Log(coinPickUpSound);
-        }
-
-        if (other.gameObject.CompareTag("Killzone"))
-        {
-            lives = lives - 1;
-            if (lives == 0)
+            if (other.gameObject.CompareTag("coin"))
             {
-                deathSound = true;
+                coins = coins + 1;
+                Debug.Log(coins);
+                other.gameObject.SetActive(false);
+                //coinPickUpSound = true;
+                MarioAudio.PlayOneShot(coinPickUpClip);
 
-                //Let audio have enough time to play
-                Invoke("RestartScene", 4f);
+
 
             }
-            else 
+
+
+            if (other.gameObject.CompareTag("Killzone"))
             {
-                deathSound = false;
-            }
-        }
+                lives = lives - 1;
+                if (lives == 0)
+                {
+                   
+                    MarioAudio.PlayOneShot(deathClip, 0.8f);
+
+                    //Let audio have enough time to play
+                    Invoke("RestartScene", 4f);
+
+                }
+
+             }
+         }
     }
 
 
