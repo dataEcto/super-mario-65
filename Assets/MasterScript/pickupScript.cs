@@ -70,14 +70,13 @@ public class pickupScript : MonoBehaviour
             MarioAudio.PlayOneShot(starPickUpClip);
 
 
-
+        }
 
             if (other.gameObject.CompareTag("coin"))
             {
                 coins = coins + 1;
                 Debug.Log(coins);
                 other.gameObject.SetActive(false);
-                //coinPickUpSound = true;
                 MarioAudio.PlayOneShot(coinPickUpClip);
 
 
@@ -99,7 +98,7 @@ public class pickupScript : MonoBehaviour
                 }
 
              }
-         }
+         
     }
 
 
