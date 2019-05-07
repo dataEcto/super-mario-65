@@ -6,7 +6,7 @@ using Cinemachine;
 using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 
-public class MasterMovementEleanorTest : MonoBehaviour
+public class UpdatedMasterMovement : MonoBehaviour
 {
     //OBJECT variables
     public Transform cam;
@@ -38,7 +38,7 @@ public class MasterMovementEleanorTest : MonoBehaviour
     public bool grounded = false;
     public float maxDistance;
 
-    public static MasterMovementEleanorTest Singleton;
+    public static UpdatedMasterMovement Singleton;
 
 
 
@@ -146,18 +146,7 @@ public class MasterMovementEleanorTest : MonoBehaviour
             velocity = temp.normalized * slideSpeed + Vector3.down * 10;
             
         }
-//        //Character Function allows these to run
-//        if (characterFunctions)
-//        {
-//            DoMove();
-//            Jumping();
-//        }
-//        //Once the player passes by the slide trigger, the rigidbody is activated
-//        //Thus, we need to switch to a new movement type.
-//        else
-//        {
-//           SlideMovement(input);
-//        }
+
        
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
@@ -330,11 +319,6 @@ public class MasterMovementEleanorTest : MonoBehaviour
 
     }
 
-//    public void SlideMovement(Vector2 direction)
-//    {
-//        Debug.Log("Slide Movement");
-//        marioRB.velocity = direction * slideSpeed + ;
-//    }
 
     public void DoGravity()
     {
