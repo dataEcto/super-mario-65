@@ -18,19 +18,19 @@ public class MasterMovement : MonoBehaviour
     private float previousInputY;
   
 
-    //PHYSICS Variables
-    private Vector3 intention;
-    private Vector3 velocity;
-    private Vector3 velocityXZ;
+    public Vector3 intention;
+    public Vector3 velocity;
+    public Vector3 velocityXZ;
+    [Header("PHYSICS Variables")]
+
     public float speed;
     public float accel;
     public float turnSpeed;
-    public float jumpSpeed;
       //Below, we will lerp turnSpeed with these 2 values
     float turnSpeedLow;
     float turnSpeedHigh;
     
-    //GRAVITY
+    [Header("Gravity")]
     public float grav = 10f;
     public bool grounded = false;
     public float maxDistance;
@@ -38,65 +38,39 @@ public class MasterMovement : MonoBehaviour
     public static MasterMovement Singleton;
 
     public bool LockIntention;
-
-
-/*
-//Camera Stuff
-    public enum Movement
-    {
-        Follow,
-        Natural,
-        Inverse
-    }
-
-    public Movement MovementMode;
-   
-    public Camera CamFollow;
-    public Camera CamInverse;
-    public Camera CamNatural;
-    
-*/    
+ 
     //audio
     public AudioSource walkingSound;
     
-    //jump
+    [Header("jump settings")]
     public float movementMultiplier;
     public float jumpMultiplier;
     public float fallMultiplier;
-    public float walkingMultiplier;
     public float JumpCount;
     private float MaxJump;
     
     
-    //Slide Variables
+    [Header("Slide Variables")]
     //This variable is turned on and runs all of the normal character controlling functions under
     //an if statement
     public bool characterFunctions;
-    public Rigidbody marioRB;
-    public float slideSpeed;
+    public GameObject mario;
+    public float SlideturnSpeed;
+    float SlideturnSpeedLow = 0.5f;
+    float SlideturnSpeedHigh = 1.5f;
 
-
-
-    void Awake()
-    {
-        if (Singleton == null)
-        {
-            Singleton = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
     
     void Start()
     {
         mover = GetComponent<CharacterController>();
         turnSpeedLow = turnSpeed;
         turnSpeedHigh = turnSpeed * 4;
+
+        SlideturnSpeedLow = SlideturnSpeed;
+        SlideturnSpeedHigh = SlideturnSpeed * 1.5f;
+        
         
         MaxJump = 1f;
-        //MovementMode = Movement.Inverse;
         characterFunctions = true;
 
 
@@ -109,24 +83,30 @@ public class MasterMovement : MonoBehaviour
         CalculateCamera();
         CalculateGround();
         DoGravity();
-        DoSound();
+        //DoSound();
         
         //Character Function allows these to run
         if (characterFunctions)
         {
             DoMove();
             Jumping();
+            mover.Move(velocity * Time.deltaTime);
         }
         //Once the player passes by the slide trigger, the rigidbody is activated
         //Thus, we need to switch to a new movement type.
         else
         {
-           SlideMovement(input);
+
+          
+                SlideMovement();
+                mover.Move(velocity * Time.deltaTime);
+    
+           
         }
        
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
-        mover.Move(velocity * Time.deltaTime);
+       
 
         if (velocity.y < 0)
         {
@@ -142,11 +122,7 @@ public class MasterMovement : MonoBehaviour
             velocity = velocity + Vector3.up * Physics.gravity.y * jumpMultiplier * Time.fixedDeltaTime;
         }
 
-
-
-        //Debug.Log("The " + MovementMode);
-
-
+      
     }
 
     public void DoInput()
@@ -154,13 +130,6 @@ public class MasterMovement : MonoBehaviour
         
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         
-        //Slide Input to prevent upward movement
-        if (characterFunctions == false)
-        {
-            input = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
-            Debug.Log("SLIDE INPUT");
-        }
-
     }
     
     public void CalculateCamera()
@@ -178,18 +147,40 @@ public class MasterMovement : MonoBehaviour
     public void CalculateGround()
     {
 
-        Ray playerRay = new Ray(this.transform.position, -Vector3.up);
-        RaycastHit hit;
-        Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.red);
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, maxDistance))
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
-        }
+       // if (characterFunctions)
+     //   {
+            Ray playerRay = new Ray(this.transform.position, -Vector3.up);
+            RaycastHit hit;
+            Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.red);
+            if (Physics.Raycast(transform.position, -Vector3.up, out hit, maxDistance))
+            {
+                grounded = true;
+            }
+            else
+            {
+                grounded = false;
+            }
+       // }
         
+     /*   
+       else 
+        {
+            Ray marioRay = new Ray(mario.transform.position, -Vector3.up);
+            RaycastHit marioHit;
+            Debug.DrawRay(marioRay.origin, marioRay.direction * maxDistance, Color.blue);
+            
+            
+            if (Physics.Raycast(transform.position, -Vector3.up, out marioHit, maxDistance))
+            {
+                grounded = true;
+            }
+            else
+            {
+                grounded = false;
+            }
+        }
+
+      */
         
     }
 
@@ -198,14 +189,13 @@ public class MasterMovement : MonoBehaviour
     {
         //Relatively move with the cameras directoin
         //(Up and Right)
-        Vector3 intention = camF * input.y + camR * input.x;
+        intention = camF * input.y + camR * input.x;
 
         float topSpeed = velocity.magnitude / turnSpeed;
 
         //As Velocity increases, our turn speed should be slower
         //within the range of 0 movement speed to topSpeed
         turnSpeed = Mathf.Lerp(turnSpeedHigh, turnSpeedLow, topSpeed);
-        //If there is input...
         if (input.magnitude > 0)
         {
             //....We will get the rotation of the camera, determing the direction we face
@@ -213,7 +203,6 @@ public class MasterMovement : MonoBehaviour
             //And rotate the player in that direction.
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
         }
-
         //then, we create a velocity that goes forward, which changes depending on the rotation
         //First, though, we get rid of the Velocity that affects the Y axis
         //Allowing for gravity to be used
@@ -226,10 +215,45 @@ public class MasterMovement : MonoBehaviour
 
     }
 
-    public void SlideMovement(Vector2 direction)
+    public void SlideMovement()
     {
-        Debug.Log("Slide Movement");
-        marioRB.velocity = direction * slideSpeed;
+       
+        //marioRB.velocity = new Vector3(direction.x * slideSpeed, marioRB.velocity.y, marioRB.velocity.z); 
+        //Set the Z to be relative to Mario's X axis
+        
+        
+        //Relatively move with the cameras direction
+        //(Up and Right)
+        Vector3 intention = camF * input.y + camR * input.x;
+
+        float SlidetopSpeed = velocity.magnitude / turnSpeed;
+
+        //As Velocity increases, our turn speed should be slower
+        //within the range of 0 movement speed to topSpeed
+        turnSpeed = Mathf.Lerp(SlideturnSpeedHigh, SlideturnSpeedLow, SlidetopSpeed);
+        
+        if (input.magnitude > 0)
+        {
+            //....We will get the rotation of the camera, determing the direction we face
+            Quaternion rot = Quaternion.LookRotation(intention);
+            //And rotate the player in that direction.
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
+        }
+        
+        //then, we create a velocity that goes forward, which changes depending on the rotation
+        //First, though, we get rid of the Velocity that affects the Y axis
+        //Allowing for gravity to be used
+        velocityXZ = velocity;
+        velocityXZ.y = 0;
+        velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
+        
+        //Now that we made sure everything but the Y is being affected, we finally change the velocity
+        velocity += new Vector3(velocityXZ.x, velocity.y, velocityXZ.z) * Time.deltaTime;
+        //We just use the default velocity.Y as that is being affected by gravity alone
+
+        
+        //If I can change the velocity here, it can push mario automatically when it is on the slide.
+
     }
 
     public void DoGravity()
@@ -244,12 +268,17 @@ public class MasterMovement : MonoBehaviour
         }
         else
         {
+            Debug.Log("Fall Down");
            //Just changing the velocity to be going downwards.
            velocity.y -= grav * Time.deltaTime;
+
+     
         }
         
         //We also set a limit to how long velocity.y can be decreased/increased.
         velocity.y = Mathf.Clamp(velocity.y, -10, 10);
+        
+     
     }
 
     public void Jumping()
@@ -273,37 +302,6 @@ public class MasterMovement : MonoBehaviour
 
     }
 
-    //Jay stuff
-    public void MarioRotation() {
-
-        //....We will get the rotation of the camera, determing the direction we face
-        Quaternion rot = Quaternion.LookRotation(intention);
-        ////And rotate the player in that direction.
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
-
-    }
-
-    //Jay Stuff that fixed mario spinning when rapidly pressing W
-    public void MarioRotationAlternate() {
-
-
-
-        if (Input.GetKey(KeyCode.A)) {
-
-            this.transform.Rotate(0, -3, 0);
-         
-           }
-
-
-        if (Input.GetKey(KeyCode.D))
-        {
-
-            this.transform.Rotate(0, 3, 0);
-
-        }
-
-    }
-    
     //Made the sound Stuff its own function - Genric
     public void DoSound()
     {
