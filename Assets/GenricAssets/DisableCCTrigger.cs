@@ -16,6 +16,7 @@ public class DisableCCTrigger : MonoBehaviour
     public CharacterController PlayerController;
     public Rigidbody PlayerRB;
     public MasterMovement movementScript;//Replace Genricmovement with MasterMovement
+    public MasterMovementEleanorTest MovementScriptEleanorTest;//Replace Genricmovement with MasterMovement
 
     void Start()
     {
@@ -32,8 +33,9 @@ public class DisableCCTrigger : MonoBehaviour
         
         ///Enable the Character Controller's Rigidbody
         //PlayerController.enabled = false;
-        PlayerRB.isKinematic = false;
-        movementScript.characterFunctions = false;
+//        PlayerRB.isKinematic = false;
+//        movementScript.characterFunctions = false;
+        MovementScriptEleanorTest.OnSlide = true;
         Debug.Log("Disable The Character Controller");
     }
 }
