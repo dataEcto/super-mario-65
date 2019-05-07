@@ -15,7 +15,7 @@ public class Trigger : MonoBehaviour
 
 
 
-    public MasterMovement.Movement LocalMovementMode;
+//    public MasterMovement.Movement LocalMovementMode;
 
 
     //public bool LockIntention;
@@ -57,7 +57,7 @@ public class Trigger : MonoBehaviour
        // MasterMovement.Singleton.LockIntention = LockIntention;
 
        // GenricMovement.Singleton.LockIntention = LockIntention;
-        MasterMovement.Singleton.MovementMode = LocalMovementMode;
+       // MasterMovement.Singleton.MovementMode = LocalMovementMode;
 
         Debug.Log("Enter");
 
