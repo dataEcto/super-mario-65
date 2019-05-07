@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor.Experimental.UIElements;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MasterMovement : MonoBehaviour
 {
@@ -18,11 +19,10 @@ public class MasterMovement : MonoBehaviour
     private float previousInputY;
   
 
+    //PHYSICS Variables
     public Vector3 intention;
     public Vector3 velocity;
     public Vector3 velocityXZ;
-    [Header("PHYSICS Variables")]
-
     public float speed;
     public float accel;
     public float turnSpeed;
@@ -30,7 +30,7 @@ public class MasterMovement : MonoBehaviour
     float turnSpeedLow;
     float turnSpeedHigh;
     
-    [Header("Gravity")]
+    //GRAVITY
     public float grav = 10f;
     public bool grounded = false;
     public float maxDistance;
@@ -39,10 +39,9 @@ public class MasterMovement : MonoBehaviour
 
     public bool LockIntention;
  
-    //audio
-    public AudioSource walkingSound;
+
     
-    [Header("jump settings")]
+    //jump
     public float movementMultiplier;
     public float jumpMultiplier;
     public float fallMultiplier;
@@ -50,7 +49,7 @@ public class MasterMovement : MonoBehaviour
     private float MaxJump;
     
     
-    [Header("Slide Variables")]
+    //Slide Variables
     //This variable is turned on and runs all of the normal character controlling functions under
     //an if statement
     public bool characterFunctions;
@@ -58,6 +57,14 @@ public class MasterMovement : MonoBehaviour
     public float SlideturnSpeed;
     float SlideturnSpeedLow = 0.5f;
     float SlideturnSpeedHigh = 1.5f;
+
+
+    //Audio
+    public AudioSource marioMovement;
+    public AudioClip marioWalk;
+    public AudioSource marioJump;
+    public bool isplayed;
+
 
     
     void Start()
@@ -67,11 +74,14 @@ public class MasterMovement : MonoBehaviour
         turnSpeedHigh = turnSpeed * 4;
 
         SlideturnSpeedLow = SlideturnSpeed;
-        SlideturnSpeedHigh = SlideturnSpeed * 1.5f;
+        SlideturnSpeedHigh = SlideturnSpeed * 2;
         
         
         MaxJump = 1f;
         characterFunctions = true;
+
+        marioMovement = GetComponent<AudioSource>();
+        isplayed = false;
 
 
     }
@@ -83,7 +93,7 @@ public class MasterMovement : MonoBehaviour
         CalculateCamera();
         CalculateGround();
         DoGravity();
-        //DoSound();
+        DoSound();
         
         //Character Function allows these to run
         if (characterFunctions)
@@ -96,12 +106,8 @@ public class MasterMovement : MonoBehaviour
         //Thus, we need to switch to a new movement type.
         else
         {
-
-          
-                SlideMovement();
-                mover.Move(velocity * Time.deltaTime);
-    
-           
+           SlideMovement();
+           mover.Move(velocity * Time.deltaTime);
         }
        
         //We finally move once DoMove has calculated the velocity, rather than
@@ -147,8 +153,8 @@ public class MasterMovement : MonoBehaviour
     public void CalculateGround()
     {
 
-       // if (characterFunctions)
-     //   {
+        if (characterFunctions)
+        {
             Ray playerRay = new Ray(this.transform.position, -Vector3.up);
             RaycastHit hit;
             Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.red);
@@ -160,16 +166,14 @@ public class MasterMovement : MonoBehaviour
             {
                 grounded = false;
             }
-       // }
+        }
         
-     /*   
+        
        else 
         {
             Ray marioRay = new Ray(mario.transform.position, -Vector3.up);
             RaycastHit marioHit;
             Debug.DrawRay(marioRay.origin, marioRay.direction * maxDistance, Color.blue);
-            
-            
             if (Physics.Raycast(transform.position, -Vector3.up, out marioHit, maxDistance))
             {
                 grounded = true;
@@ -180,7 +184,7 @@ public class MasterMovement : MonoBehaviour
             }
         }
 
-      */
+      
         
     }
 
@@ -212,6 +216,7 @@ public class MasterMovement : MonoBehaviour
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
         //We just use the default velocity.Y as that is being affected by gravity alone
         velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+     
 
     }
 
@@ -222,15 +227,15 @@ public class MasterMovement : MonoBehaviour
         //Set the Z to be relative to Mario's X axis
         
         
-        //Relatively move with the cameras direction
+        //Relatively move with the cameras directoin
         //(Up and Right)
         Vector3 intention = camF * input.y + camR * input.x;
 
-        float SlidetopSpeed = velocity.magnitude / turnSpeed;
+        float topSpeed = velocity.magnitude / turnSpeed;
 
         //As Velocity increases, our turn speed should be slower
         //within the range of 0 movement speed to topSpeed
-        turnSpeed = Mathf.Lerp(SlideturnSpeedHigh, SlideturnSpeedLow, SlidetopSpeed);
+        turnSpeed = Mathf.Lerp(turnSpeedHigh, turnSpeedLow, topSpeed);
         
         if (input.magnitude > 0)
         {
@@ -248,9 +253,9 @@ public class MasterMovement : MonoBehaviour
         velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
         
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
-        velocity += new Vector3(velocityXZ.x, velocity.y, velocityXZ.z) * Time.deltaTime;
+        velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
         //We just use the default velocity.Y as that is being affected by gravity alone
-
+       
         
         //If I can change the velocity here, it can push mario automatically when it is on the slide.
 
@@ -289,6 +294,7 @@ public class MasterMovement : MonoBehaviour
             {
                 velocity = Vector3.up * movementMultiplier;
                 JumpCount = JumpCount - 1;
+                marioJump.Play();
             }
 
            
@@ -298,6 +304,12 @@ public class MasterMovement : MonoBehaviour
         if (grounded == true)
         {
             JumpCount = 1;
+
+        }
+
+        if (grounded == false) 
+        {
+            marioMovement.Stop();
         }
 
     }
@@ -306,26 +318,35 @@ public class MasterMovement : MonoBehaviour
     public void DoSound()
     {
         
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
-            Input.GetKeyDown(KeyCode.D))
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.D)) && grounded == true)
         {
 
 
-            walkingSound.Play();
-
+            if (isplayed == true)
+                return;
+            marioMovement.clip = marioWalk;
+            marioMovement.Play();
+            isplayed = true;
+          
 
         }
-        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
-                 Input.GetKeyUp(KeyCode.D))
+        else if (!Input.GetKey(KeyCode.W) &&!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) &&
+                 !Input.GetKey(KeyCode.D) || !grounded)
         {
 
 
-           
+            marioMovement.Stop();
+            isplayed = false;
 
-            walkingSound.Stop();
-   
+
+
 
         }
+
+
+
+
 
     }
     
