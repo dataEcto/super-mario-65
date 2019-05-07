@@ -40,6 +40,8 @@ public class MasterMovementEleanorTest : MonoBehaviour
 
     public static MasterMovementEleanorTest Singleton;
 
+
+
     public bool OnSlide = false;
     
     

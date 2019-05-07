@@ -57,33 +57,79 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/DisableCCTrigger.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+            <state relative-caret-position="48">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding>
-                <marker date="1557239524614" expanded="false" signature="6:78" ph="..." />
-                <marker date="1557239524614" expanded="true" signature="125:1266" ph="{...}" />
-                <marker date="1557239524614" expanded="true" signature="137:540" ph="/* This script is going to disable the Character Controller component of Mario ... */" />
-                <marker date="1557239524614" expanded="true" signature="838:858" ph="{...}" />
-                <marker date="1557239524614" expanded="true" signature="877:898" ph="{...}" />
-                <marker date="1557239524614" expanded="true" signature="946:1264" ph="{...}" />
-                <marker date="1557239524614" expanded="true" signature="970:1153" ph="/* Enable the Character Controller's Rigidbody ... */" />
+                <marker date="1557240679066" expanded="false" signature="6:78" ph="..." />
+                <marker date="1557240679066" expanded="true" signature="125:1334" ph="{...}" />
+                <marker date="1557240679066" expanded="true" signature="137:540" ph="/* This script is going to disable the Character Controller component of Mario ... */" />
+                <marker date="1557240679066" expanded="true" signature="869:889" ph="{...}" />
+                <marker date="1557240679066" expanded="true" signature="908:929" ph="{...}" />
+                <marker date="1557240679066" expanded="true" signature="977:1332" ph="{...}" />
+                <marker date="1557240679066" expanded="true" signature="1001:1184" ph="/* Enable the Character Controller's Rigidbody ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/EleanorMovement.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/MasterScript/MasterMovementEleanorTest.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="320">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
-                <marker date="1557239524613" expanded="false" signature="6:97" ph="..." />
-                <marker date="1557239524613" expanded="true" signature="143:1381" ph="{...}" />
-                <marker date="1557239524613" expanded="true" signature="499:552" ph="{...}" />
-                <marker date="1557239524613" expanded="true" signature="580:1218" ph="{...}" />
-                <marker date="1557239524613" expanded="true" signature="587:1212" ph="/* camF = cam.forward; ... */" />
-                <marker date="1557239524613" expanded="true" signature="1274:1379" ph="{...}" />
-                <marker date="1557239524613" expanded="true" signature="1326:1373" ph="{...}" />
+                <marker date="1557240680049" expanded="false" signature="6:193" ph="..." />
+                <marker date="1557240680049" expanded="true" signature="249:12316" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="1895:2134" ph="/* Camera Stuff ... */" />
+                <marker date="1557240680049" expanded="true" signature="2412:2549" ph="/* Slide Variables ... */" />
+                <marker date="1557240680049" expanded="true" signature="2664:2817" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="2701:2751" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="2764:2811" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="2839:3088" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="3112:4846" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="3270:3431" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="3481:3524" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="3537:3776" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="3777:4266" ph="/* Character Function allows these to run ... */" />
+                <marker date="1557240680049" expanded="true" signature="4342:4600" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="4365:4483" ph="/* player is falling down ... */" />
+                <marker date="1557240680049" expanded="true" signature="4633:4793" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="4884:5202" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="5069:5195" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="5241:5413" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="5448:5857" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="5721:5770" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="5783:5833" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="5901:7724" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="6045:6266" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="6436:7699" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="6473:6588" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="6816:7451" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="6911:7038" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="7468:7689" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="7725:8514" ph="/* void OnDrawGizmosSelected() ... */" />
+                <marker date="1557240680049" expanded="true" signature="8541:9995" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="8556:8625" ph="/* Relatively move with the cameras directoin ... */" />
+                <marker date="1557240680049" expanded="true" signature="8754:8869" ph="/* As Velocity increases, our turn speed should be slower ... */" />
+                <marker date="1557240680049" expanded="true" signature="9004:9337" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="9347:9552" ph="/* then, we create a velocity that goes forward, which changes depending on the rotation ... */" />
+                <marker date="1557240680049" expanded="true" signature="9734:9916" ph="/* Now that we made sure everything but the Y is being affected, we finally change the velocity ... */" />
+                <marker date="1557240680049" expanded="true" signature="9997:10158" ph="/* public void SlideMovement(Vector2 direction) ... */" />
+                <marker date="1557240680049" expanded="true" signature="10187:10706" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="10211:10337" ph="/* First we need to make sure if we are touching ... */" />
+                <marker date="1557240680049" expanded="true" signature="10359:10411" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="10424:10555" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="10733:11087" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="10788:11002" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="10847:10978" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="11033:11080" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="11137:11446" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="11555:11779" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="11597:11667" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="11706:11772" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="11863:12309" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="12024:12081" ph="{...}" />
+                <marker date="1557240680049" expanded="true" signature="12229:12302" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -127,47 +173,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovementElVer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1696">
-              <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
-              <folding>
-                <marker date="1554998327989" expanded="false" signature="6:121" ph="..." />
-                <marker date="1554998327989" expanded="true" signature="171:5075" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="974:1127" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="1011:1061" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="1074:1121" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="1149:1287" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="1311:1619" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="1464:1561" ph="/* We finally move once DoMove has calculated the velocity, rather than ... */" />
-                <marker date="1554998327989" expanded="true" signature="1646:1756" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="1795:1967" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2002:2413" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2277:2326" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2339:2389" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2438:4331" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2453:2522" ph="/* Relatively move with the cameras directoin ... */" />
-                <marker date="1554998327989" expanded="true" signature="2549:2622" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2635:2978" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2789:2870" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="2888:2968" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="3052:3167" ph="/* As Velocity increases, our turn speed should be slower ... */" />
-                <marker date="1554998327989" expanded="true" signature="3302:3635" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="3653:3858" ph="/* then, we create a velocity that goes forward, which changes depending on the rotation ... */" />
-                <marker date="1554998327989" expanded="true" signature="4038:4220" ph="/* Now that we made sure everything but the Y is being affected, we finally change the velocity ... */" />
-                <marker date="1554998327989" expanded="true" signature="4360:4879" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="4384:4510" ph="/* First we need to make sure if we are touching ... */" />
-                <marker date="1554998327989" expanded="true" signature="4532:4584" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="4597:4728" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="4906:5073" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="4934:5067" ph="{...}" />
-                <marker date="1554998327989" expanded="true" signature="4989:5057" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -191,6 +196,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovementElVer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/DisableCCTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MasterScript/MasterMovementEleanorTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/CameraLocking.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GenricAssets/GenricCamera.cs" root0="FORCE_HIGHLIGHTING" />
@@ -206,8 +212,9 @@
         <option value="$PROJECT_DIR$/Assets/MasterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/GenricMovementElVer.cs" />
         <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/GenricAssets/DisableCCTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/MasterScript/MasterMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/MasterScript/MasterMovementEleanorTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/GenricAssets/DisableCCTrigger.cs" />
       </list>
     </option>
   </component>
@@ -308,7 +315,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12425000" />
+    <option name="totallyTimeSpent" value="14176000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -323,7 +330,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25426438" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25426438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -517,7 +524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/EleanorMovement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="256">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding>
             <marker date="1557239524613" expanded="false" signature="6:97" ph="..." />
             <marker date="1557239524613" expanded="true" signature="143:1381" ph="{...}" />
@@ -530,18 +538,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MasterScript/MasterMovementEleanorTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <marker date="1557240680049" expanded="false" signature="6:193" ph="..." />
+            <marker date="1557240680049" expanded="true" signature="249:12316" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="1895:2134" ph="/* Camera Stuff ... */" />
+            <marker date="1557240680049" expanded="true" signature="2412:2549" ph="/* Slide Variables ... */" />
+            <marker date="1557240680049" expanded="true" signature="2664:2817" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="2701:2751" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="2764:2811" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="2839:3088" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="3112:4846" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="3270:3431" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="3481:3524" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="3537:3776" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="3777:4266" ph="/* Character Function allows these to run ... */" />
+            <marker date="1557240680049" expanded="true" signature="4342:4600" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="4365:4483" ph="/* player is falling down ... */" />
+            <marker date="1557240680049" expanded="true" signature="4633:4793" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="4884:5202" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="5069:5195" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="5241:5413" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="5448:5857" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="5721:5770" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="5783:5833" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="5901:7724" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="6045:6266" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="6436:7699" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="6473:6588" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="6816:7451" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="6911:7038" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="7468:7689" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="7725:8514" ph="/* void OnDrawGizmosSelected() ... */" />
+            <marker date="1557240680049" expanded="true" signature="8541:9995" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="8556:8625" ph="/* Relatively move with the cameras directoin ... */" />
+            <marker date="1557240680049" expanded="true" signature="8754:8869" ph="/* As Velocity increases, our turn speed should be slower ... */" />
+            <marker date="1557240680049" expanded="true" signature="9004:9337" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="9347:9552" ph="/* then, we create a velocity that goes forward, which changes depending on the rotation ... */" />
+            <marker date="1557240680049" expanded="true" signature="9734:9916" ph="/* Now that we made sure everything but the Y is being affected, we finally change the velocity ... */" />
+            <marker date="1557240680049" expanded="true" signature="9997:10158" ph="/* public void SlideMovement(Vector2 direction) ... */" />
+            <marker date="1557240680049" expanded="true" signature="10187:10706" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="10211:10337" ph="/* First we need to make sure if we are touching ... */" />
+            <marker date="1557240680049" expanded="true" signature="10359:10411" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="10424:10555" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="10733:11087" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="10788:11002" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="10847:10978" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="11033:11080" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="11137:11446" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="11555:11779" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="11597:11667" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="11706:11772" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="11863:12309" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="12024:12081" ph="{...}" />
+            <marker date="1557240680049" expanded="true" signature="12229:12302" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GenricAssets/DisableCCTrigger.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+        <state relative-caret-position="48">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
-            <marker date="1557239524614" expanded="false" signature="6:78" ph="..." />
-            <marker date="1557239524614" expanded="true" signature="125:1266" ph="{...}" />
-            <marker date="1557239524614" expanded="true" signature="137:540" ph="/* This script is going to disable the Character Controller component of Mario ... */" />
-            <marker date="1557239524614" expanded="true" signature="838:858" ph="{...}" />
-            <marker date="1557239524614" expanded="true" signature="877:898" ph="{...}" />
-            <marker date="1557239524614" expanded="true" signature="946:1264" ph="{...}" />
-            <marker date="1557239524614" expanded="true" signature="970:1153" ph="/* Enable the Character Controller's Rigidbody ... */" />
+            <marker date="1557240679066" expanded="false" signature="6:78" ph="..." />
+            <marker date="1557240679066" expanded="true" signature="125:1334" ph="{...}" />
+            <marker date="1557240679066" expanded="true" signature="137:540" ph="/* This script is going to disable the Character Controller component of Mario ... */" />
+            <marker date="1557240679066" expanded="true" signature="869:889" ph="{...}" />
+            <marker date="1557240679066" expanded="true" signature="908:929" ph="{...}" />
+            <marker date="1557240679066" expanded="true" signature="977:1332" ph="{...}" />
+            <marker date="1557240679066" expanded="true" signature="1001:1184" ph="/* Enable the Character Controller's Rigidbody ... */" />
           </folding>
         </state>
       </provider>
