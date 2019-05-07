@@ -29,5 +29,8 @@ public class GenricCamera : MonoBehaviour
 
         //How far the camera is from the player
         transform.position = player.position - transform.forward * camDistance + Vector3.up * playerHeight;
+        
+        
+        // Lock Camera Pos 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class EleanorMovement : MonoBehaviour
@@ -16,6 +17,11 @@ public class EleanorMovement : MonoBehaviour
     public float MoveSpeed;
     public float JumpForce;
 
+    public CinemachineVirtualCamera cam;
+
+    private Vector3 camF;
+    private Vector3 camR;
+
 
 
     void Start()
@@ -23,22 +29,29 @@ public class EleanorMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
     
-    void Update ()
+    void LateUpdate ()
     {
-               
-        _rb.MoveRotation(_rb.rotation * Quaternion.Euler(0, Input.GetAxis("Mouse X") * MouseSensitivity, 0));
-        _rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * MoveSpeed) + (transform.right * Input.GetAxis("Horizontal") * MoveSpeed));
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _rb.AddForce(Vector3.up * JumpForce);
-            _jump = true;
-        }
-       
+//        camF = cam.forward;
+//        camR = cam.right;
+//
+//        camF.y = 0;
+//        camR.y = 0;
+//        camF = camF.normalized;
+//        camR = camR.normalized;
+//               
+//        _rb.transform.LookAt(FollowCamera.transform.position + FollowCamera.transform.forward * 5);
+//        _rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * MoveSpeed) + (transform.right * Input.GetAxis("Horizontal") * MoveSpeed));
+//        if (Input.GetKeyDown(KeyCode.Space))
+//        {
+//            _rb.AddForce(Vector3.up * JumpForce);
+//            _jump = true;
+//        }
+//       
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_jump)
+        if (_jump && _rb.velocity.y < 0.001f)
         {
             _jump = false;
         }
