@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+//using Cinemachine;
 using UnityEditor;
 
 public class Trigger : MonoBehaviour
@@ -19,7 +19,7 @@ public class Trigger : MonoBehaviour
 
 
     //public bool LockIntention;
-    private CinemachineBrain brain;
+//    private CinemachineBrain brain;
 
     /*public enum TransitionMode
     {

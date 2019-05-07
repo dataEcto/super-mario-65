@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+//using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
@@ -21,9 +21,9 @@ public class pickupScript : MonoBehaviour
     [Header("UI")]
     public Canvas canvas;
 
-    public TextMeshProUGUI _coinTextMeshProUgui;
-    public TextMeshProUGUI _starTextMeshProUgui;
-    public TextMeshProUGUI _MarioLivesTextMeshProUgui;
+//    public TextMeshProUGUI _coinTextMeshProUgui;
+//    public TextMeshProUGUI _starTextMeshProUgui;
+//    public TextMeshProUGUI _MarioLivesTextMeshProUgui;
 
     public String[] spriteArray;
     
@@ -108,7 +108,7 @@ public class pickupScript : MonoBehaviour
     void updateCoins()
     {
 
-        _coinTextMeshProUgui.text = coins.ToString();
+       // _coinTextMeshProUgui.text = coins.ToString();
 
         if (coins>=10)
         {
@@ -121,13 +121,13 @@ public class pickupScript : MonoBehaviour
     void updateStars()
     {
 
-        _starTextMeshProUgui.text =stars.ToString();
+        //_starTextMeshProUgui.text =stars.ToString();
 
     }
 
     void updateLives()
     {
-        _MarioLivesTextMeshProUgui.text = lives.ToString();
+     //   _MarioLivesTextMeshProUgui.text = lives.ToString();
 
 
       //  _starTextMeshProUgui.text = stars.ToString();

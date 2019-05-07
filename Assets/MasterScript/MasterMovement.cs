@@ -18,10 +18,11 @@ public class MasterMovement : MonoBehaviour
     private float previousInputY;
   
 
-    //PHYSICS Variables
     public Vector3 intention;
     public Vector3 velocity;
     public Vector3 velocityXZ;
+    [Header("PHYSICS Variables")]
+
     public float speed;
     public float accel;
     public float turnSpeed;
@@ -29,7 +30,7 @@ public class MasterMovement : MonoBehaviour
     float turnSpeedLow;
     float turnSpeedHigh;
     
-    //GRAVITY
+    [Header("Gravity")]
     public float grav = 10f;
     public bool grounded = false;
     public float maxDistance;
@@ -41,7 +42,7 @@ public class MasterMovement : MonoBehaviour
     //audio
     public AudioSource walkingSound;
     
-    //jump
+    [Header("jump settings")]
     public float movementMultiplier;
     public float jumpMultiplier;
     public float fallMultiplier;
@@ -49,7 +50,7 @@ public class MasterMovement : MonoBehaviour
     private float MaxJump;
     
     
-    //Slide Variables
+    [Header("Slide Variables")]
     //This variable is turned on and runs all of the normal character controlling functions under
     //an if statement
     public bool characterFunctions;
