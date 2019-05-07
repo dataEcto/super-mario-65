@@ -29,6 +29,7 @@
         </e>
         <e p="MasterScript" t="Include">
           <e p="MasterMovement.cs" t="Include" />
+          <e p="MasterMovementEleanorTest.cs" t="Include" />
           <e p="MasterPickUp.cs" t="Include" />
         </e>
         <e p="ProCore" t="Include">
