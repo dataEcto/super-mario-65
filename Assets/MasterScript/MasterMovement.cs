@@ -66,7 +66,7 @@ public class MasterMovement : MonoBehaviour
         turnSpeedHigh = turnSpeed * 4;
 
         SlideturnSpeedLow = SlideturnSpeed;
-        SlideturnSpeedHigh = SlideturnSpeed * 2;
+        SlideturnSpeedHigh = SlideturnSpeed * 1.5f;
         
         
         MaxJump = 1f;
@@ -95,8 +95,12 @@ public class MasterMovement : MonoBehaviour
         //Thus, we need to switch to a new movement type.
         else
         {
-           SlideMovement();
-           mover.Move(velocity * Time.deltaTime);
+
+          
+                SlideMovement();
+                mover.Move(velocity * Time.deltaTime);
+    
+           
         }
        
         //We finally move once DoMove has calculated the velocity, rather than
@@ -142,8 +146,8 @@ public class MasterMovement : MonoBehaviour
     public void CalculateGround()
     {
 
-        if (characterFunctions)
-        {
+       // if (characterFunctions)
+     //   {
             Ray playerRay = new Ray(this.transform.position, -Vector3.up);
             RaycastHit hit;
             Debug.DrawRay(playerRay.origin, playerRay.direction * maxDistance, Color.red);
@@ -155,14 +159,16 @@ public class MasterMovement : MonoBehaviour
             {
                 grounded = false;
             }
-        }
+       // }
         
-        
+     /*   
        else 
         {
             Ray marioRay = new Ray(mario.transform.position, -Vector3.up);
             RaycastHit marioHit;
             Debug.DrawRay(marioRay.origin, marioRay.direction * maxDistance, Color.blue);
+            
+            
             if (Physics.Raycast(transform.position, -Vector3.up, out marioHit, maxDistance))
             {
                 grounded = true;
@@ -173,7 +179,7 @@ public class MasterMovement : MonoBehaviour
             }
         }
 
-      
+      */
         
     }
 
@@ -215,15 +221,15 @@ public class MasterMovement : MonoBehaviour
         //Set the Z to be relative to Mario's X axis
         
         
-        //Relatively move with the cameras directoin
+        //Relatively move with the cameras direction
         //(Up and Right)
         Vector3 intention = camF * input.y + camR * input.x;
 
-        float topSpeed = velocity.magnitude / turnSpeed;
+        float SlidetopSpeed = velocity.magnitude / turnSpeed;
 
         //As Velocity increases, our turn speed should be slower
         //within the range of 0 movement speed to topSpeed
-        turnSpeed = Mathf.Lerp(turnSpeedHigh, turnSpeedLow, topSpeed);
+        turnSpeed = Mathf.Lerp(SlideturnSpeedHigh, SlideturnSpeedLow, SlidetopSpeed);
         
         if (input.magnitude > 0)
         {
@@ -241,7 +247,7 @@ public class MasterMovement : MonoBehaviour
         velocityXZ = Vector3.Lerp(velocityXZ, transform.forward * input.magnitude * speed, accel * Time.deltaTime);
         
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
-        velocity = new Vector3(velocityXZ.x, velocity.y, velocityXZ.z);
+        velocity += new Vector3(velocityXZ.x, velocity.y, velocityXZ.z) * Time.deltaTime;
         //We just use the default velocity.Y as that is being affected by gravity alone
 
         
