@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+//using Cinemachine;
 using UnityEditor;
 
 public class Trigger : MonoBehaviour
@@ -15,11 +15,11 @@ public class Trigger : MonoBehaviour
 
 
 
-    public MasterMovement.Movement LocalMovementMode;
+//    public MasterMovement.Movement LocalMovementMode;
 
 
     //public bool LockIntention;
-    private CinemachineBrain brain;
+//    private CinemachineBrain brain;
 
     /*public enum TransitionMode
     {
@@ -57,7 +57,7 @@ public class Trigger : MonoBehaviour
        // MasterMovement.Singleton.LockIntention = LockIntention;
 
        // GenricMovement.Singleton.LockIntention = LockIntention;
-        MasterMovement.Singleton.MovementMode = LocalMovementMode;
+       // MasterMovement.Singleton.MovementMode = LocalMovementMode;
 
         Debug.Log("Enter");
 
