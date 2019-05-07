@@ -151,15 +151,7 @@ public class GenricMovement : MonoBehaviour
     {
         //Relatively move with the cameras directoin
         //(Up and Right)
-        if (LockIntention)
-        {
-            intention = camF*input.y + camR*input.x;
-        }
-        else
-        {
-            intention = transform.forward * input.y + transform.right * input.x;
-          
-
+        intention = transform.forward * input.y + transform.right * input.x;
             if (input.y * previousInputY <= 0 && input.y < 0)
             {
                 intention += transform.forward * -5;
@@ -169,13 +161,15 @@ public class GenricMovement : MonoBehaviour
             {
                 intention += transform.forward * 5;
             }
-        }
+    
 
         float topSpeed = velocity.magnitude/turnSpeed;
         
         //As Velocity increases, our turn speed should be slower
         //within the range of 0 movement speed to topSpeed
         turnSpeed = Mathf.Lerp(turnSpeedHigh,turnSpeedLow, topSpeed );
+        
+        
         //If there is input...
         if (input.magnitude > 0)
         {
@@ -191,6 +185,7 @@ public class GenricMovement : MonoBehaviour
         velocityXZ = velocity;
         velocityXZ.y = 0;
         velocityXZ = Vector3.Lerp(velocityXZ, transform.forward*input.magnitude * speed, accel * Time.deltaTime);
+        
         //Now that we made sure everything but the Y is being affected, we finally change the velocity
         //We just use the default velocity.Y as that is being affected by gravity alone
         velocity = new Vector3(velocityXZ.x,velocity.y,velocityXZ.z);

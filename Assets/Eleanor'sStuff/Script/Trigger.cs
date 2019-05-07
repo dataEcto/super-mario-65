@@ -15,7 +15,7 @@ public class Trigger : MonoBehaviour
 
 
 
-    public MasterMovement.Movement LocalMovementMode;
+//    public MasterMovement.Movement LocalMovementMode;
 
 
     //public bool LockIntention;
@@ -48,12 +48,17 @@ public class Trigger : MonoBehaviour
     {
         //Change the name of this singleton to what script is controlling marios movement in whatever scene it is
         //ex) Genric Test Scene's Mario has Genricmovment. Change the if to have GenricMovement.singleton
-        if (other.gameObject !=  MasterMovement.Singleton.gameObject) return;
+        if (other.gameObject !=  MasterMovement.Singleton.gameObject  ) return;
         PreviousCamera.SetActive(false);
         NewCamera.SetActive(true);
        // GenricMovementElVer.Singleton.LockIntention = LockIntention;
+
+       //GenricMovement.Singleton.LockIntention = LockIntention;
+       // MasterMovement.Singleton.LockIntention = LockIntention;
+
        // GenricMovement.Singleton.LockIntention = LockIntention;
-        MasterMovement.Singleton.MovementMode = LocalMovementMode;
+       // MasterMovement.Singleton.MovementMode = LocalMovementMode;
+
         Debug.Log("Enter");
 
     }

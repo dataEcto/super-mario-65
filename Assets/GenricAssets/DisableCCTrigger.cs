@@ -15,7 +15,7 @@ public class DisableCCTrigger : MonoBehaviour
     
     public CharacterController PlayerController;
     public Rigidbody PlayerRB;
-    public GenricMovement movementScript;//Replace Genricmovement with MasterMovement
+    public MasterMovement movementScript;//Replace Genricmovement with MasterMovement
 
     void Start()
     {
@@ -29,9 +29,11 @@ public class DisableCCTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        PlayerController.enabled = false;
+        
+        ///Enable the Character Controller's Rigidbody
+        //PlayerController.enabled = false;
         PlayerRB.isKinematic = false;
-        movementScript.stopRotating = true;
+        movementScript.characterFunctions = false;
         Debug.Log("Disable The Character Controller");
     }
 }
