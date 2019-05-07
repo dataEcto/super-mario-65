@@ -90,7 +90,7 @@ public class pickupScript : MonoBehaviour
                 lives = lives - 1;
                 if (lives == 0)
                 {
-                   
+                    GetComponent<MasterMovement>().speed = 0f;
                     MarioAudio.PlayOneShot(deathClip, 0.8f);
 
                     //Let audio have enough time to play
