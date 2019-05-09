@@ -164,7 +164,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         else
         {
             Vector3 temp = velocity + Quaternion.Euler(0, 0, groundSlopeAngle) * new Vector3(velocity.x, 0, velocity.z);
-            velocity = temp.normalized * slideSpeed + Vector3.down * 10;
+            velocity = temp.normalized * slideSpeed + Vector3.down * 20;
 
 
         }
@@ -483,6 +483,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
         else
         {
+
             if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
                  Input.GetKey(KeyCode.D)))
             {
