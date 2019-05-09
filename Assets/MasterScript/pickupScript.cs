@@ -62,6 +62,7 @@ public class pickupScript : MonoBehaviour
     // Triggers for coins, stars, and killzones
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Something");
         if (other.gameObject.CompareTag("star"))
         {
             stars = stars + 1;

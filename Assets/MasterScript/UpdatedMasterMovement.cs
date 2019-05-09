@@ -5,21 +5,22 @@ using System.Runtime.CompilerServices;
 using Cinemachine;
 using UnityEditor.Experimental.UIElements;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class UpdatedMasterMovement : MonoBehaviour
 {
     //OBJECT variables
     public Transform cam;
     private CharacterController mover;
-    
+
     //CAMERA Variables
     private Vector3 camF;
     private Vector3 camR;
-    
+
     //INPUT Variables
     private Vector2 input;
     private float previousInputY;
-  
+
 
     //PHYSICS Variables
     private Vector3 intention;
@@ -29,10 +30,10 @@ public class UpdatedMasterMovement : MonoBehaviour
     public float accel;
     public float turnSpeed;
     public float jumpSpeed;
-      //Below, we will lerp turnSpeed with these 2 values
+    //Below, we will lerp turnSpeed with these 2 values
     float turnSpeedLow;
     float turnSpeedHigh;
-    
+
     //GRAVITY
     public float grav = 10f;
     public bool grounded = false;
@@ -43,12 +44,21 @@ public class UpdatedMasterMovement : MonoBehaviour
 
 
     public bool OnSlide = false;
-    
-    
-    [Header("Results")] 
+
+    //Audio
+    public AudioSource marioMovement;
+    public AudioClip marioWalk;
+    public AudioSource marioJump;
+    public bool isplayed;
+    public AudioSource marioYahoo;
+    public AudioSource backGroundMusicSlide;
+   
+
+
+    [Header("Results")]
     public float groundSlopeAngle = 0f;            // Angle of the slope in degrees
     public Vector3 groundSlopeDir = Vector3.zero;  // The calculated slope as a vector
-    
+
     [Header("Settings")]
     public bool showDebug = false;                  // Show debug gizmos and lines
     public LayerMask castingMask;                  // Layer mask for casts. You'll want to ignore the player.
@@ -61,40 +71,43 @@ public class UpdatedMasterMovement : MonoBehaviour
     public Vector3 rayOriginOffset2 = new Vector3(0.2f, 0f, -0.16f);
 
 
-/*
-//Camera Stuff
-    public enum Movement
-    {
-        Follow,
-        Natural,
-        Inverse
-    }
+    /*
+    //Camera Stuff
+        public enum Movement
+        {
+            Follow,
+            Natural,
+            Inverse
+        }
 
-    public Movement MovementMode;
-   
-    public Camera CamFollow;
-    public Camera CamInverse;
-    public Camera CamNatural;
-    
-*/    
-    //audio
-    public AudioSource walkingSound;
-    
+        public Movement MovementMode;
+
+        public Camera CamFollow;
+        public Camera CamInverse;
+        public Camera CamNatural;
+
+    */
+
+
     //jump
     public float movementMultiplier;
     public float jumpMultiplier;
     public float fallMultiplier;
     public float walkingMultiplier;
     public float JumpCount;
-    private float MaxJump;
-    
-    
+
+
+
     //Slide Variables
     //This variable is turned on and runs all of the normal character controlling functions under
     //an if statement
     public bool characterFunctions;
     public Rigidbody marioRB;
     public float slideSpeed;
+    
+    
+    public Animator Anim;
+
 
 
 
@@ -109,21 +122,24 @@ public class UpdatedMasterMovement : MonoBehaviour
             Destroy(this);
         }
     }
-    
+
     void Start()
     {
         mover = GetComponent<CharacterController>();
         turnSpeedLow = turnSpeed;
         turnSpeedHigh = turnSpeed * 4;
-        
-        MaxJump = 1f;
+
+
         //MovementMode = Movement.Inverse;
         characterFunctions = true;
 
+        marioMovement = GetComponent<AudioSource>();
+        isplayed = false;
+       
 
     }
 
-    
+
     void Update()
     {
         DoInput();
@@ -131,23 +147,26 @@ public class UpdatedMasterMovement : MonoBehaviour
         CalculateGround();
         DoMove();
         DoGravity();
-        if (mover && mover.isGrounded) {
+        if (mover && mover.isGrounded)
+        {
             CheckSlope(new Vector3(transform.position.x, transform.position.y - (mover.height / 2) + startDistanceFromBottom, transform.position.z));
         }
         DoSound();
-        
+
         if (!OnSlide)
         {
             Jumping();
+
         }
         else
-        {            
+        {
             Vector3 temp = velocity + Quaternion.Euler(0, 0, groundSlopeAngle) * new Vector3(velocity.x, 0, velocity.z);
             velocity = temp.normalized * slideSpeed + Vector3.down * 10;
-            
+
+
         }
 
-       
+
         //We finally move once DoMove has calculated the velocity, rather than
         //at the same time
         mover.Move(velocity * Time.deltaTime);
@@ -168,26 +187,33 @@ public class UpdatedMasterMovement : MonoBehaviour
 
 
 
+        SetAnimation();
+
         //Debug.Log("The " + MovementMode);
     }
 
-    
-    
+
+
 
     public void DoInput()
     {
-        
+
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        
+
         //Slide Input to prevent upward movement
         if (OnSlide)
         {
             input = new Vector2(Input.GetAxisRaw("Horizontal"), 1);
+            Anim.SetBool("Idle", false);
             Debug.Log("SLIDE INPUT");
+            //Slide Audio
+           
+
+
         }
 
     }
-    
+
     public void CalculateCamera()
     {
         camF = cam.forward;
@@ -214,8 +240,8 @@ public class UpdatedMasterMovement : MonoBehaviour
         {
             grounded = false;
         }
-        
-        
+
+
     }
 
     public void CheckSlope(Vector3 origin)
@@ -225,9 +251,9 @@ public class UpdatedMasterMovement : MonoBehaviour
         {
             groundSlopeAngle = Vector3.Angle(hit.normal, Vector3.up);
             Vector3 temp = Vector3.Cross(hit.normal, Vector3.down);
-            groundSlopeDir = Vector3.Cross(temp, hit.normal); 
+            groundSlopeDir = Vector3.Cross(temp, hit.normal);
         }
-        
+
         RaycastHit slopeHit1;
         RaycastHit slopeHit2;
 
@@ -252,7 +278,7 @@ public class UpdatedMasterMovement : MonoBehaviour
                 // Get angle of slope of these two hit points.
                 float angleTwo = Vector3.Angle(slopeHit2.normal, Vector3.up);
                 // 3 collision points: Take the MEDIAN by sorting array and grabbing middle.
-                float[] tempArray = {groundSlopeAngle, angleOne, angleTwo};
+                float[] tempArray = { groundSlopeAngle, angleOne, angleTwo };
                 Array.Sort(tempArray);
                 groundSlopeAngle = tempArray[1];
             }
@@ -263,28 +289,28 @@ public class UpdatedMasterMovement : MonoBehaviour
                 groundSlopeAngle = average;
             }
         }
-        
-        
+
+
 
     }
-//    
-//    void OnDrawGizmosSelected()
-//    {
-//        if (showDebug)
-//        {
-//            // Visualize SphereCast with two spheres and a line
-//            Vector3 startPoint = new Vector3(transform.position.x, transform.position.y - (mover.height / 2) + startDistanceFromBottom, transform.position.z);
-//            Vector3 endPoint = new Vector3(transform.position.x, transform.position.y - (mover.height / 2) + startDistanceFromBottom - sphereCastDistance, transform.position.z);
-//
-//            Gizmos.color = Color.white;
-//            Gizmos.DrawWireSphere(startPoint, sphereCastRadius);
-//
-//            Gizmos.color = Color.gray;
-//            Gizmos.DrawWireSphere(endPoint, sphereCastRadius);
-//
-//            Gizmos.DrawLine(startPoint, endPoint);
-//        }
-//    }
+    //
+    //    void OnDrawGizmosSelected()
+    //    {
+    //        if (showDebug)
+    //        {
+    //            // Visualize SphereCast with two spheres and a line
+    //            Vector3 startPoint = new Vector3(transform.position.x, transform.position.y - (mover.height / 2) + startDistanceFromBottom, transform.position.z);
+    //            Vector3 endPoint = new Vector3(transform.position.x, transform.position.y - (mover.height / 2) + startDistanceFromBottom - sphereCastDistance, transform.position.z);
+    //
+    //            Gizmos.color = Color.white;
+    //            Gizmos.DrawWireSphere(startPoint, sphereCastRadius);
+    //
+    //            Gizmos.color = Color.gray;
+    //            Gizmos.DrawWireSphere(endPoint, sphereCastRadius);
+    //
+    //            Gizmos.DrawLine(startPoint, endPoint);
+    //        }
+    //    }
 
 
     public void DoMove()
@@ -322,7 +348,7 @@ public class UpdatedMasterMovement : MonoBehaviour
 
     public void DoGravity()
     {
-        
+
         //First we need to make sure if we are touching
         //the ground first.
         //This makes sure fall speed is consistent
@@ -332,10 +358,10 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
         else
         {
-           //Just changing the velocity to be going downwards.
-           velocity.y -= grav * Time.deltaTime;
+            //Just changing the velocity to be going downwards.
+            velocity.y -= grav * Time.deltaTime;
         }
-        
+
         //We also set a limit to how long velocity.y can be decreased/increased.
         velocity.y = Mathf.Clamp(velocity.y, -10, 10);
     }
@@ -348,9 +374,10 @@ public class UpdatedMasterMovement : MonoBehaviour
             {
                 velocity = Vector3.up * movementMultiplier;
                 JumpCount = JumpCount - 1;
+                marioJump.Play();
             }
 
-           
+
 
         }
 
@@ -362,7 +389,8 @@ public class UpdatedMasterMovement : MonoBehaviour
     }
 
     //Jay stuff
-    public void MarioRotation() {
+    public void MarioRotation()
+    {
 
         //....We will get the rotation of the camera, determing the direction we face
         Quaternion rot = Quaternion.LookRotation(intention);
@@ -372,15 +400,17 @@ public class UpdatedMasterMovement : MonoBehaviour
     }
 
     //Jay Stuff that fixed mario spinning when rapidly pressing W
-    public void MarioRotationAlternate() {
+    public void MarioRotationAlternate()
+    {
 
 
 
-        if (Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.A))
+        {
 
             this.transform.Rotate(0, -3, 0);
-         
-           }
+
+        }
 
 
         if (Input.GetKey(KeyCode.D))
@@ -391,38 +421,75 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
 
     }
-    
+
     //Made the sound Stuff its own function - Genric
     public void DoSound()
     {
-        
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||
-            Input.GetKeyDown(KeyCode.D))
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.D)) && grounded == true)
         {
-
-
-            walkingSound.Play();
-
+            if (isplayed == true)
+                return;
+            marioMovement.clip = marioWalk;
+            marioMovement.Play();
+            isplayed = true;
 
         }
-        else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) ||
-                 Input.GetKeyUp(KeyCode.D))
+        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) &&
+                 !Input.GetKey(KeyCode.D) || !grounded)
         {
 
+            marioMovement.Stop();
+            isplayed = false;
 
-           
+        }
 
-            walkingSound.Stop();
-   
+        if (OnSlide) {
 
+            isplayed = true;
+           }
+
+    }
+
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("slide"))
+        {
+            marioYahoo.Play();
+            backGroundMusicSlide.Play();
         }
 
     }
-    
+
+
+    private void SetAnimation()
+    {
+        if (OnSlide)
+        {
+            Anim.SetBool("Slide", true);
+            
+        }
+        else
+        {
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
+                 Input.GetKey(KeyCode.D)))
+            {
+                Anim.SetBool("Run", true);
+            }
+
+            if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) &&
+                !Input.GetKey(KeyCode.D))
+            {
+                Anim.SetBool("Run", false);
+
+            }
+        }
+
+    }
 }
 
 
 
- 
 
-   
+

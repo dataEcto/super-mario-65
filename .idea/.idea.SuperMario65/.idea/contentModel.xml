@@ -27,7 +27,6 @@
           <e p="GenricCamera.cs" t="Include" />
           <e p="MasterMovement.cs" t="Include" />
           <e p="pickupScript.cs" t="Include" />
-          <e p="SlideTrigger.cs" t="Include" />
           <e p="UpdatedMasterMovement.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
