@@ -6,13 +6,11 @@ using UnityEditor;
 
 public class Trigger : MonoBehaviour
 {
-    public Animator Anim;
     public bool Slide;
 
     private void OnTriggerExit(Collider other)
     {
         UpdatedMasterMovement.Singleton.OnSlide = Slide;
-        Anim.SetBool("Slide", Slide);
     }
 
 }

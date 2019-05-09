@@ -107,6 +107,9 @@ public class UpdatedMasterMovement : MonoBehaviour
     public bool characterFunctions;
     public Rigidbody marioRB;
     public float slideSpeed;
+    
+    
+    public Animator Anim;
 
 
 
@@ -187,6 +190,7 @@ public class UpdatedMasterMovement : MonoBehaviour
 
 
 
+        SetAnimation();
 
         //Debug.Log("The " + MovementMode);
     }
@@ -203,6 +207,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         if (OnSlide)
         {
             input = new Vector2(Input.GetAxisRaw("Horizontal"), 1);
+            Anim.SetBool("Idle", false);
             Debug.Log("SLIDE INPUT");
             //Slide Audio
            
@@ -464,6 +469,32 @@ public class UpdatedMasterMovement : MonoBehaviour
             backGroundMusicSlide.Stop();
             Victory.Play();
             itsme.Play();
+        }
+
+    }
+
+
+    private void SetAnimation()
+    {
+        if (OnSlide)
+        {
+            Anim.SetBool("Slide", true);
+            
+        }
+        else
+        {
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
+                 Input.GetKey(KeyCode.D)))
+            {
+                Anim.SetBool("Run", true);
+            }
+
+            if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) &&
+                !Input.GetKey(KeyCode.D))
+            {
+                Anim.SetBool("Run", false);
+
+            }
         }
 
     }
