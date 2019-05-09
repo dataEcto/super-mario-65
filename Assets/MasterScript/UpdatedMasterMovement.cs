@@ -52,6 +52,9 @@ public class UpdatedMasterMovement : MonoBehaviour
     public bool isplayed;
     public AudioSource marioYahoo;
     public AudioSource backGroundMusicSlide;
+    public AudioSource Victory;
+    public AudioSource itsme;
+    public AudioSource chillMusic;
    
 
 
@@ -451,8 +454,16 @@ public class UpdatedMasterMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("slide"))
         {
+            chillMusic.Stop();
             marioYahoo.Play();
             backGroundMusicSlide.Play();
+        }
+
+        if (collision.gameObject.CompareTag("Victory")) 
+        {
+            backGroundMusicSlide.Stop();
+            Victory.Play();
+            itsme.Play();
         }
 
     }
