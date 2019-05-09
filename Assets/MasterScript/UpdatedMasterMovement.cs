@@ -483,7 +483,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
         else
         {
-            Anim.SetBool("Slide", false);
+
             if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
                  Input.GetKey(KeyCode.D)))
             {
