@@ -158,10 +158,11 @@
         <option value="$PROJECT_DIR$/Assets/GenricAssets/DisableCCTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/MasterScript/UpdatedMasterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Eleanor'sStuff/Script/Trigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/MasterScript/SlideTrigger.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1047" />
   </component>
@@ -258,7 +259,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15098000" />
+    <option name="totallyTimeSpent" value="15864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,7 +271,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25426438" />
@@ -517,6 +518,13 @@
             <marker date="1557243619457" expanded="true" signature="11479:11536" ph="{...}" />
             <marker date="1557243619457" expanded="true" signature="11684:11757" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MasterScript/SlideTrigger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
     </entry>
