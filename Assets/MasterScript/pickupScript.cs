@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using TMPro;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
@@ -20,10 +20,10 @@ public class pickupScript : MonoBehaviour
     public int lives;
     [Header("UI")]
     public Canvas canvas;
-
-//    public TextMeshProUGUI _coinTextMeshProUgui;
-//    public TextMeshProUGUI _starTextMeshProUgui;
-//    public TextMeshProUGUI _MarioLivesTextMeshProUgui;
+    
+   public TextMeshProUGUI _coinTextMeshProUgui;
+   public TextMeshProUGUI _starTextMeshProUgui;
+   public TextMeshProUGUI _MarioLivesTextMeshProUgui;
 
     public String[] spriteArray;
     
@@ -31,6 +31,8 @@ public class pickupScript : MonoBehaviour
     public GameObject Star;
 
     public Animator thisAnimator;
+
+    public Vector3 spawnPos;
 
 
 
@@ -44,6 +46,7 @@ public class pickupScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnPos = this.transform.position;
         //setArray();
         lives = 3;
 
@@ -88,6 +91,7 @@ public class pickupScript : MonoBehaviour
             if (other.gameObject.CompareTag("Killzone"))
             {
                 lives = lives - 1;
+                this.gameObject.transform.position = spawnPos;
                 if (lives == 0)
                 {
                     GetComponent<MasterMovement>().speed = 0f;
