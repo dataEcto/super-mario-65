@@ -16368,6 +16368,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6.6163
       objectReference: {fileID: 0}
+    - target: {fileID: 7358456035103437656, guid: c75f0ea0348e94880a08646cf8ac6095,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358456033303523046, guid: c75f0ea0348e94880a08646cf8ac6095,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d6022d05c8e843c2abe9ba6134596d6, type: 3}
+    - target: {fileID: 7358456033565533485, guid: c75f0ea0348e94880a08646cf8ac6095,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7358456033810946398, guid: c75f0ea0348e94880a08646cf8ac6095,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46fbaeaebd61140f4bd01b4dc6d264de, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c75f0ea0348e94880a08646cf8ac6095, type: 3}
 --- !u!43 &1557756091
