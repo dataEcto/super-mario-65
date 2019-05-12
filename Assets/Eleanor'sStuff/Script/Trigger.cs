@@ -11,7 +11,6 @@ public class Trigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         UpdatedMasterMovement.Singleton.OnSlide = Slide;
-        UpdatedMasterMovement.Singleton.Anim.SetBool("Slide", Slide);
     }
 
 }
