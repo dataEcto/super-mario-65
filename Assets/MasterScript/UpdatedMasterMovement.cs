@@ -238,6 +238,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         if (Physics.Raycast(transform.position, -Vector3.up, out hit, maxDistance))
         {
             grounded = true;
+            
         }
         else
         {
@@ -378,6 +379,7 @@ public class UpdatedMasterMovement : MonoBehaviour
                 velocity = Vector3.up * movementMultiplier;
                 JumpCount = JumpCount - 1;
                 marioJump.Play();
+                Anim.SetTrigger("Jump");
             }
 
 
@@ -387,6 +389,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         if (grounded == true)
         {
             JumpCount = 1;
+            
         }
 
     }

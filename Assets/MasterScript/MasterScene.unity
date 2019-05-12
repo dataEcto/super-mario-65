@@ -317,9 +317,13 @@ MonoBehaviour:
   stars: 0
   lives: 0
   canvas: {fileID: 0}
+  _coinTextMeshProUgui: {fileID: 0}
+  _starTextMeshProUgui: {fileID: 0}
+  _MarioLivesTextMeshProUgui: {fileID: 0}
   spriteArray: []
   Star: {fileID: 0}
   thisAnimator: {fileID: 0}
+  spawnPos: {x: 0, y: 0, z: 0}
   MarioAudio: {fileID: 1574187797}
   coinPickUpClip: {fileID: 8300000, guid: 5773b91562f054bfa84354a0ef33c832, type: 3}
   starPickUpClip: {fileID: 8300000, guid: ce019aaf4b8fd403f9774f1430f40484, type: 3}
@@ -2155,6 +2159,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265527329957880209, guid: c6be438d72880c5479a345f6654060c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.17
       objectReference: {fileID: 0}
     - target: {fileID: 7265527329957880214, guid: c6be438d72880c5479a345f6654060c4,
         type: 3}
