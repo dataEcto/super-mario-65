@@ -91,7 +91,7 @@ public class pickupScript : MonoBehaviour
             if (other.gameObject.CompareTag("killbox"))
             {
                 lives = lives - 1;
-                this.gameObject.transform.position = spawnPos;
+                this.gameObject.transform.position += spawnPos;
                 if (lives == 0)
                 {
                     GetComponent<MasterMovement>().speed = 0f;

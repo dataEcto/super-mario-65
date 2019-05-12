@@ -486,7 +486,6 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
         else
         {
-
             if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
                  Input.GetKey(KeyCode.D)))
             {
