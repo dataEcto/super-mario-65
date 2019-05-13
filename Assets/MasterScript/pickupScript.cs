@@ -23,10 +23,7 @@ public class pickupScript : MonoBehaviour
     
    public TextMeshProUGUI _coinTextMeshProUgui;
    public TextMeshProUGUI _starTextMeshProUgui;
-   public TextMeshProUGUI _MarioLivesTextMeshProUgui;
-
-    public String[] spriteArray;
-    
+   public TextMeshProUGUI _MarioLivesTextMeshProUgui; 
 
     public GameObject Star;
 
@@ -81,9 +78,7 @@ public class pickupScript : MonoBehaviour
                 coins = coins + 1;
                 Debug.Log(coins);
                 other.gameObject.SetActive(false);
-                MarioAudio.PlayOneShot(coinPickUpClip);
-
-
+                //MarioAudio.PlayOneShot(coinPickUpClip);
 
             }
 

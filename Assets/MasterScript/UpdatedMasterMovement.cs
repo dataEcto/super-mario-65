@@ -473,6 +473,11 @@ public class UpdatedMasterMovement : MonoBehaviour
             Victory.Play();
             itsme.Play();
         }
+        
+        if (collision.gameObject.CompareTag("star"))
+        {
+           Debug.Log("FINISH");
+        }
 
     }
 
@@ -501,6 +506,9 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
 
     }
+
+    
+    
 }
 
 
