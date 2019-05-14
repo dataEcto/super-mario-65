@@ -88,7 +88,7 @@ public class pickupScript : MonoBehaviour
             }
 
 
-            if (other.gameObject.CompareTag("Killzone"))
+            if (other.gameObject.CompareTag("killbox"))
             {
                 lives = lives - 1;
                 this.gameObject.transform.position = spawnPos;
