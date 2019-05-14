@@ -13,17 +13,15 @@ using UnityEngine.Audio;
 
 public class pickupScript : MonoBehaviour
 {
-   [Header("Ints")]
-    public int coins;
+    [Header("Ints")] public int coins;
 
     public int stars;
     public int lives;
-    [Header("UI")]
-    public Canvas canvas;
-    
-   public TextMeshProUGUI _coinTextMeshProUgui;
-   public TextMeshProUGUI _starTextMeshProUgui;
-   public TextMeshProUGUI _MarioLivesTextMeshProUgui; 
+    [Header("UI")] public Canvas canvas;
+
+    public TextMeshProUGUI _coinTextMeshProUgui;
+    public TextMeshProUGUI _starTextMeshProUgui;
+    public TextMeshProUGUI _MarioLivesTextMeshProUgui;
 
     public GameObject Star;
 
@@ -39,7 +37,7 @@ public class pickupScript : MonoBehaviour
     public AudioClip coinPickUpClip;
     public AudioClip starPickUpClip;
     public AudioClip deathClip;
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,46 +57,48 @@ public class pickupScript : MonoBehaviour
         updateStars();
         updateLives();
     }
+
     // Triggers for coins, stars, and killzones
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Something");
+        
         if (other.gameObject.CompareTag("star"))
         {
             stars = stars + 1;
             Debug.Log(stars);
             other.gameObject.SetActive(false);
             MarioAudio.PlayOneShot(starPickUpClip);
-
+            SceneManager.LoadScene(2);
 
         }
 
-            if (other.gameObject.CompareTag("coin"))
+        if (other.gameObject.CompareTag("coin"))
+        {
+            coins = coins + 1;
+            Debug.Log(coins);
+            other.gameObject.SetActive(false);
+            //MarioAudio.PlayOneShot(coinPickUpClip);
+
+        }
+
+
+        if (other.gameObject.CompareTag("killbox"))
+        {
+            lives = lives - 1;
+            this.gameObject.transform.position += spawnPos;
+            if (lives == 0)
             {
-                coins = coins + 1;
-                Debug.Log(coins);
-                other.gameObject.SetActive(false);
-                //MarioAudio.PlayOneShot(coinPickUpClip);
+                GetComponent<MasterMovement>().speed = 0f;
+                MarioAudio.PlayOneShot(deathClip, 0.8f);
+
+                //Let audio have enough time to play
+                Invoke("RestartScene", 4f);
 
             }
 
+        }
 
-            if (other.gameObject.CompareTag("killbox"))
-            {
-                lives = lives - 1;
-                this.gameObject.transform.position += spawnPos;
-                if (lives == 0)
-                {
-                    GetComponent<MasterMovement>().speed = 0f;
-                    MarioAudio.PlayOneShot(deathClip, 0.8f);
-
-                    //Let audio have enough time to play
-                    Invoke("RestartScene", 4f);
-
-                }
-
-             }
-         
     }
 
 
@@ -107,81 +107,36 @@ public class pickupScript : MonoBehaviour
     void updateCoins()
     {
 
-       // _coinTextMeshProUgui.text = coins.ToString();
+        _coinTextMeshProUgui.text = coins.ToString();
 
-        if (coins>=10)
+        if (coins >= 10)
         {
         }
 
-       // _coinTextMeshProUgui.text = coins.ToString();
+        _coinTextMeshProUgui.text = coins.ToString();
 
     }
 
     void updateStars()
     {
 
-        //_starTextMeshProUgui.text =stars.ToString();
+        _starTextMeshProUgui.text = stars.ToString();
 
     }
 
     void updateLives()
     {
-     //   _MarioLivesTextMeshProUgui.text = lives.ToString();
+        _MarioLivesTextMeshProUgui.text = lives.ToString();
 
 
-      //  _starTextMeshProUgui.text = stars.ToString();
+        //  _starTextMeshProUgui.text = stars.ToString();
 
     }
 
-    void RestartScene() 
+    void RestartScene()
     {
         SceneManager.LoadScene(1);
     }
 
-
-    //array holds sprite draw strings for TMPro
-    /* void setArray()
-     {
-         spriteArray[0] = "<sprite index = 0>";
-         spriteArray[1] = "<sprite index = 1>";
-         spriteArray[2] = "<sprite index = 2>";
-         spriteArray[3] = "<sprite index = 3>";
-         spriteArray[4] = "<sprite index = 4>";
-         spriteArray[5] = "<sprite index = 5>";
-         spriteArray[6] = "<sprite index = 6>";
-         spriteArray[7] = "<sprite index = 7>";
-         spriteArray[8] = "<sprite index = 8>";
-         spriteArray[9] = "<sprite index = 9>";
-     }
- //Numbers above 9 adds sprite combinations to cover all numbers
-   /*  void numbersAbove9()
-     {
-         if (stars == 10)
-         {
-             _starTextMeshProUgui.text = spriteArray[1] + spriteArray[9];
-         }
-
-         if (coins == 10)
-         {
-             _coinTextMeshProUgui.text = spriteArray[1] + spriteArray[9];
-         }
-         if (stars == 11)
-         {
-             _starTextMeshProUgui.text = spriteArray[0] + spriteArray[0];
-         }
-
-         if (coins == 11)
-         {
-             _coinTextMeshProUgui.text = spriteArray[1] + spriteArray[1];
-         }
-
-         if (coins == 12)
-         {
-             _coinTextMeshProUgui.text = spriteArray[0] + spriteArray[1];
-         }
-     }
- */
-
-
-
 }
+
