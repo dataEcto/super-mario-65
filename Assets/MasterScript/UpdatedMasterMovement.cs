@@ -110,6 +110,7 @@ public class UpdatedMasterMovement : MonoBehaviour
     
     
     public Animator Anim;
+    public Vector3 StartPos;
 
 
 
@@ -138,7 +139,8 @@ public class UpdatedMasterMovement : MonoBehaviour
 
         marioMovement = GetComponent<AudioSource>();
         isplayed = false;
-       
+        StartPos = transform.position;
+
 
     }
 
@@ -164,6 +166,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         else
         {
             Vector3 temp = velocity + Quaternion.Euler(0, 0, groundSlopeAngle) * new Vector3(velocity.x, 0, velocity.z);
+            GenricCamera.Singleton.Slope = temp;
             velocity = temp.normalized * slideSpeed + Vector3.down * 20;
 
 

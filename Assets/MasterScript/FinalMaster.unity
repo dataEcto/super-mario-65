@@ -118,7 +118,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52078
+  m_Name: pb_Mesh13328
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -404,7 +404,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52372
+  m_Name: pb_Mesh13622
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -564,7 +564,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51876
+  m_Name: pb_Mesh13126
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -730,7 +730,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52142
+  m_Name: pb_Mesh13392
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1142,7 +1142,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51558
+  m_Name: pb_Mesh12806
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1302,7 +1302,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51590
+  m_Name: pb_Mesh12838
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1462,7 +1462,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51786
+  m_Name: pb_Mesh13034
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1622,7 +1622,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51904
+  m_Name: pb_Mesh13154
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1790,6 +1790,7 @@ GameObject:
   - component: {fileID: 245286681}
   - component: {fileID: 245286680}
   - component: {fileID: 245286679}
+  - component: {fileID: 245286684}
   m_Layer: 0
   m_Name: Killzone (7)
   m_TagString: killbox
@@ -2098,6 +2099,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245286677}
   m_Mesh: {fileID: 624469673}
+--- !u!114 &245286684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245286677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &247249086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2245,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51638
+  m_Name: pb_Mesh12886
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2642,7 +2657,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52524
+  m_Name: pb_Mesh13774
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2802,7 +2817,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51814
+  m_Name: pb_Mesh13062
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2970,6 +2985,7 @@ GameObject:
   - component: {fileID: 429898164}
   - component: {fileID: 429898163}
   - component: {fileID: 429898162}
+  - component: {fileID: 429898167}
   m_Layer: 0
   m_Name: Killzone (10)
   m_TagString: killbox
@@ -3278,6 +3294,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429898160}
   m_Mesh: {fileID: 1318800262}
+--- !u!114 &429898167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429898160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &434305741
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,6 +3322,7 @@ GameObject:
   - component: {fileID: 434305745}
   - component: {fileID: 434305744}
   - component: {fileID: 434305743}
+  - component: {fileID: 434305748}
   m_Layer: 0
   m_Name: Killzone (21)
   m_TagString: killbox
@@ -3600,6 +3631,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434305741}
   m_Mesh: {fileID: 646599711}
+--- !u!114 &434305748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434305741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &446746194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3614,6 +3659,7 @@ GameObject:
   - component: {fileID: 446746198}
   - component: {fileID: 446746197}
   - component: {fileID: 446746196}
+  - component: {fileID: 446746201}
   m_Layer: 0
   m_Name: Killzone (23)
   m_TagString: killbox
@@ -3922,6 +3968,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446746194}
   m_Mesh: {fileID: 659486332}
+--- !u!114 &446746201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446746194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &447403541
 GameObject:
   m_ObjectHideFlags: 0
@@ -4054,7 +4114,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52060
+  m_Name: pb_Mesh13310
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4829,7 +4889,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51802
+  m_Name: pb_Mesh13050
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4989,7 +5049,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52034
+  m_Name: pb_Mesh13284
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5149,7 +5209,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52046
+  m_Name: pb_Mesh13296
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5569,6 +5629,7 @@ GameObject:
   - component: {fileID: 537376066}
   - component: {fileID: 537376065}
   - component: {fileID: 537376064}
+  - component: {fileID: 537376069}
   m_Layer: 0
   m_Name: Killzone (2)
   m_TagString: killbox
@@ -5877,6 +5938,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537376062}
   m_Mesh: {fileID: 1421035821}
+--- !u!114 &537376069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537376062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &552293303
 GameObject:
   m_ObjectHideFlags: 0
@@ -5952,7 +6027,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51722
+  m_Name: pb_Mesh12970
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6120,6 +6195,7 @@ GameObject:
   - component: {fileID: 573644042}
   - component: {fileID: 573644041}
   - component: {fileID: 573644040}
+  - component: {fileID: 573644045}
   m_Layer: 0
   m_Name: Killzone (11)
   m_TagString: killbox
@@ -6428,13 +6504,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573644038}
   m_Mesh: {fileID: 208359816}
+--- !u!114 &573644045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573644038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &579593109
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52506
+  m_Name: pb_Mesh13756
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6728,6 +6818,7 @@ GameObject:
   - component: {fileID: 600140725}
   - component: {fileID: 600140724}
   - component: {fileID: 600140723}
+  - component: {fileID: 600140728}
   m_Layer: 0
   m_Name: Killzone (3)
   m_TagString: killbox
@@ -7036,13 +7127,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600140721}
   m_Mesh: {fileID: 427458682}
+--- !u!114 &600140728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600140721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &612191492
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51740
+  m_Name: pb_Mesh12988
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7202,7 +7307,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52000
+  m_Name: pb_Mesh13250
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7362,7 +7467,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51610
+  m_Name: pb_Mesh12858
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7591,7 +7696,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51680
+  m_Name: pb_Mesh12928
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7759,6 +7864,7 @@ GameObject:
   - component: {fileID: 656073911}
   - component: {fileID: 656073910}
   - component: {fileID: 656073909}
+  - component: {fileID: 656073914}
   m_Layer: 0
   m_Name: Killzone (5)
   m_TagString: killbox
@@ -8067,13 +8173,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656073907}
   m_Mesh: {fileID: 682304635}
+--- !u!114 &656073914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656073907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &659486332
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51694
+  m_Name: pb_Mesh12942
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8233,7 +8353,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51944
+  m_Name: pb_Mesh13194
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8437,7 +8557,7 @@ PrefabInstance:
     - target: {fileID: 31421585447746693, guid: bd42156f5da1b4f418ff3068d41abf85,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 31421585447746693, guid: bd42156f5da1b4f418ff3068d41abf85,
         type: 3}
@@ -8462,7 +8582,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51838
+  m_Name: pb_Mesh13086
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8622,7 +8742,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51888
+  m_Name: pb_Mesh13138
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -8908,7 +9028,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51956
+  m_Name: pb_Mesh13206
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9068,7 +9188,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52452
+  m_Name: pb_Mesh13702
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9362,6 +9482,7 @@ GameObject:
   - component: {fileID: 768515448}
   - component: {fileID: 768515447}
   - component: {fileID: 768515446}
+  - component: {fileID: 768515451}
   m_Layer: 0
   m_Name: Killzone (4)
   m_TagString: killbox
@@ -9670,13 +9791,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768515444}
   m_Mesh: {fileID: 692280577}
+--- !u!114 &768515451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768515444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &787907552
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52292
+  m_Name: pb_Mesh13542
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -9962,7 +10097,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52262
+  m_Name: pb_Mesh13512
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10188,7 +10323,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52334
+  m_Name: pb_Mesh13584
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10348,7 +10483,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52164
+  m_Name: pb_Mesh13414
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10508,7 +10643,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51752
+  m_Name: pb_Mesh13000
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10928,6 +11063,7 @@ GameObject:
   - component: {fileID: 964470654}
   - component: {fileID: 964470653}
   - component: {fileID: 964470652}
+  - component: {fileID: 964470657}
   m_Layer: 0
   m_Name: Killzone (6)
   m_TagString: killbox
@@ -11236,13 +11372,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964470650}
   m_Mesh: {fileID: 700451716}
+--- !u!114 &964470657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964470650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &976184572
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51650
+  m_Name: pb_Mesh12898
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11528,7 +11678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51986
+  m_Name: pb_Mesh13236
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11696,6 +11846,7 @@ GameObject:
   - component: {fileID: 996665021}
   - component: {fileID: 996665020}
   - component: {fileID: 996665019}
+  - component: {fileID: 996665024}
   m_Layer: 0
   m_Name: Killzone (19)
   m_TagString: killbox
@@ -12004,6 +12155,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996665017}
   m_Mesh: {fileID: 991428961}
+--- !u!114 &996665024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996665017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &1013315629
 GameObject:
   m_ObjectHideFlags: 0
@@ -12018,6 +12183,7 @@ GameObject:
   - component: {fileID: 1013315633}
   - component: {fileID: 1013315632}
   - component: {fileID: 1013315631}
+  - component: {fileID: 1013315636}
   m_Layer: 0
   m_Name: Killzone (14)
   m_TagString: killbox
@@ -12326,13 +12492,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013315629}
   m_Mesh: {fileID: 612364799}
+--- !u!114 &1013315636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013315629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &1036609514
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52276
+  m_Name: pb_Mesh13526
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -12492,7 +12672,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52094
+  m_Name: pb_Mesh13344
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -12778,7 +12958,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51860
+  m_Name: pb_Mesh13110
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -12938,7 +13118,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52360
+  m_Name: pb_Mesh13610
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -13232,6 +13412,7 @@ GameObject:
   - component: {fileID: 1194410245}
   - component: {fileID: 1194410244}
   - component: {fileID: 1194410243}
+  - component: {fileID: 1194410248}
   m_Layer: 0
   m_Name: Killzone (25)
   m_TagString: killbox
@@ -13540,6 +13721,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194410241}
   m_Mesh: {fileID: 514305782}
+--- !u!114 &1194410248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194410241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &1203222851
 GameObject:
   m_ObjectHideFlags: 0
@@ -13894,7 +14089,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52492
+  m_Name: pb_Mesh13742
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -14054,7 +14249,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51932
+  m_Name: pb_Mesh13182
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -14340,7 +14535,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52348
+  m_Name: pb_Mesh13598
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -14500,7 +14695,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51666
+  m_Name: pb_Mesh12914
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -14794,6 +14989,7 @@ GameObject:
   - component: {fileID: 1397901864}
   - component: {fileID: 1397901863}
   - component: {fileID: 1397901862}
+  - component: {fileID: 1397901867}
   m_Layer: 0
   m_Name: Killzone (13)
   m_TagString: killbox
@@ -15102,13 +15298,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397901860}
   m_Mesh: {fileID: 1581480816}
+--- !u!114 &1397901867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397901860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &1421035821
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51764
+  m_Name: pb_Mesh13012
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -15268,7 +15478,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52198
+  m_Name: pb_Mesh13448
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -15428,7 +15638,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52388
+  m_Name: pb_Mesh13638
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -15588,7 +15798,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52318
+  m_Name: pb_Mesh13568
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -15874,7 +16084,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52222
+  m_Name: pb_Mesh13472
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -16160,7 +16370,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52246
+  m_Name: pb_Mesh13496
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -16439,7 +16649,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52234
+  m_Name: pb_Mesh13484
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -16599,7 +16809,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51708
+  m_Name: pb_Mesh12956
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -16759,7 +16969,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52106
+  m_Name: pb_Mesh13356
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -16927,6 +17137,7 @@ GameObject:
   - component: {fileID: 1599752028}
   - component: {fileID: 1599752027}
   - component: {fileID: 1599752026}
+  - component: {fileID: 1599752031}
   m_Layer: 0
   m_Name: Killzone (1)
   m_TagString: killbox
@@ -17235,6 +17446,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599752024}
   m_Mesh: {fileID: 861036031}
+--- !u!114 &1599752031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599752024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &1603522607
 GameObject:
   m_ObjectHideFlags: 0
@@ -17249,6 +17474,7 @@ GameObject:
   - component: {fileID: 1603522611}
   - component: {fileID: 1603522610}
   - component: {fileID: 1603522609}
+  - component: {fileID: 1603522614}
   m_Layer: 0
   m_Name: Killzone (22)
   m_TagString: killbox
@@ -17557,6 +17783,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603522607}
   m_Mesh: {fileID: 1910980268}
+--- !u!114 &1603522614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603522607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1001 &1610685688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17632,7 +17872,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52464
+  m_Name: pb_Mesh13714
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -17792,7 +18032,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51972
+  m_Name: pb_Mesh13222
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -18464,6 +18704,7 @@ GameObject:
   - component: {fileID: 1671676560}
   - component: {fileID: 1671676559}
   - component: {fileID: 1671676558}
+  - component: {fileID: 1671676563}
   m_Layer: 0
   m_Name: Killzone (18)
   m_TagString: killbox
@@ -18772,13 +19013,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671676556}
   m_Mesh: {fileID: 1522826369}
+--- !u!114 &1671676563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671676556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &1691938170
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52128
+  m_Name: pb_Mesh13378
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -19064,7 +19319,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51624
+  m_Name: pb_Mesh12872
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -19839,7 +20094,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52304
+  m_Name: pb_Mesh13554
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -19999,7 +20254,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51578
+  m_Name: pb_Mesh12826
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -20293,6 +20548,7 @@ GameObject:
   - component: {fileID: 1806718294}
   - component: {fileID: 1806718293}
   - component: {fileID: 1806718292}
+  - component: {fileID: 1806718297}
   m_Layer: 0
   m_Name: Killzone (15)
   m_TagString: killbox
@@ -20601,6 +20857,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806718290}
   m_Mesh: {fileID: 1780348712}
+--- !u!114 &1806718297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806718290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &1839630341
 GameObject:
   m_ObjectHideFlags: 0
@@ -20615,6 +20885,7 @@ GameObject:
   - component: {fileID: 1839630345}
   - component: {fileID: 1839630344}
   - component: {fileID: 1839630343}
+  - component: {fileID: 1839630348}
   m_Layer: 0
   m_Name: Killzone (17)
   m_TagString: killbox
@@ -20923,13 +21194,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839630341}
   m_Mesh: {fileID: 1443359857}
+--- !u!114 &1839630348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839630341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &1866399352
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52018
+  m_Name: pb_Mesh13268
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -21215,7 +21500,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52402
+  m_Name: pb_Mesh13652
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -21635,6 +21920,7 @@ GameObject:
   - component: {fileID: 1897747754}
   - component: {fileID: 1897747753}
   - component: {fileID: 1897747752}
+  - component: {fileID: 1897747757}
   m_Layer: 0
   m_Name: Killzone (26)
   m_TagString: killbox
@@ -21943,13 +22229,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897747750}
   m_Mesh: {fileID: 60711973}
+--- !u!114 &1897747757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897747750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &1910980268
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52178
+  m_Name: pb_Mesh13428
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -22235,7 +22535,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52478
+  m_Name: pb_Mesh13728
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -22403,6 +22703,7 @@ GameObject:
   - component: {fileID: 1950060694}
   - component: {fileID: 1950060693}
   - component: {fileID: 1950060692}
+  - component: {fileID: 1950060697}
   m_Layer: 0
   m_Name: Killzone (12)
   m_TagString: killbox
@@ -22711,6 +23012,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950060690}
   m_Mesh: {fileID: 1885231311}
+--- !u!114 &1950060697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950060690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!4 &1955081529
 Transform:
   m_ObjectHideFlags: 0
@@ -22851,6 +23166,7 @@ GameObject:
   - component: {fileID: 1974064328}
   - component: {fileID: 1974064327}
   - component: {fileID: 1974064326}
+  - component: {fileID: 1974064331}
   m_Layer: 0
   m_Name: Killzone (8)
   m_TagString: killbox
@@ -23159,6 +23475,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974064324}
   m_Mesh: {fileID: 2082652916}
+--- !u!114 &1974064331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974064324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &1983786596
 GameObject:
   m_ObjectHideFlags: 0
@@ -23258,6 +23588,7 @@ MonoBehaviour:
   player: {fileID: 66764761}
   camDistance: 5
   playerHeight: 1
+  Slope: {x: 0, y: 0, z: 0}
 --- !u!114 &1983786601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23410,6 +23741,7 @@ GameObject:
   - component: {fileID: 2055841908}
   - component: {fileID: 2055841907}
   - component: {fileID: 2055841906}
+  - component: {fileID: 2055841911}
   m_Layer: 0
   m_Name: Killzone (20)
   m_TagString: killbox
@@ -23718,6 +24050,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055841904}
   m_Mesh: {fileID: 1614866315}
+--- !u!114 &2055841911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055841904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &2067470449
 GameObject:
   m_ObjectHideFlags: 0
@@ -23732,6 +24078,7 @@ GameObject:
   - component: {fileID: 2067470453}
   - component: {fileID: 2067470452}
   - component: {fileID: 2067470451}
+  - component: {fileID: 2067470456}
   m_Layer: 0
   m_Name: Killzone (24)
   m_TagString: killbox
@@ -24040,6 +24387,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067470449}
   m_Mesh: {fileID: 1947138323}
+--- !u!114 &2067470456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067470449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &2069470785
 GameObject:
   m_ObjectHideFlags: 0
@@ -24054,6 +24415,7 @@ GameObject:
   - component: {fileID: 2069470789}
   - component: {fileID: 2069470788}
   - component: {fileID: 2069470787}
+  - component: {fileID: 2069470792}
   m_Layer: 0
   m_Name: Killzone (16)
   m_TagString: killbox
@@ -24362,6 +24724,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069470785}
   m_Mesh: {fileID: 1220244771}
+--- !u!114 &2069470792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069470785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!1 &2077188670
 GameObject:
   m_ObjectHideFlags: 0
@@ -24376,6 +24752,7 @@ GameObject:
   - component: {fileID: 2077188674}
   - component: {fileID: 2077188673}
   - component: {fileID: 2077188672}
+  - component: {fileID: 2077188677}
   m_Layer: 0
   m_Name: Killzone (9)
   m_TagString: killbox
@@ -24684,13 +25061,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077188670}
   m_Mesh: {fileID: 579593109}
+--- !u!114 &2077188677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077188670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eafadd1538c9546978dac92ef1ab07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slide: 0
+  ResetPosition: 1
 --- !u!43 &2082652916
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52426
+  m_Name: pb_Mesh13676
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -24850,7 +25241,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52210
+  m_Name: pb_Mesh13460
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -25210,7 +25601,7 @@ PrefabInstance:
     - target: {fileID: 7265527329957880209, guid: c6be438d72880c5479a345f6654060c4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.12
+      value: 27.9
       objectReference: {fileID: 0}
     - target: {fileID: 7265527329957880209, guid: c6be438d72880c5479a345f6654060c4,
         type: 3}
