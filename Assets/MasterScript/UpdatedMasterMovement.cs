@@ -6,6 +6,7 @@ using Cinemachine;
 using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class UpdatedMasterMovement : MonoBehaviour
 {
@@ -147,6 +148,10 @@ public class UpdatedMasterMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         DoInput();
         CalculateCamera();
         CalculateGround();
@@ -196,6 +201,21 @@ public class UpdatedMasterMovement : MonoBehaviour
         SetAnimation();
 
         //Debug.Log("The " + MovementMode);
+    }
+
+    public void Reset()
+    {
+/*        velocity = Vector3.zero;
+        transform.localPosition = StartPos;
+        Debug.Log(transform.localPosition);
+        Debug.Log(StartPos);
+        Debug.Log("Reset");*/
+        DontDestroyOnLoad(chillMusic.gameObject);
+        chillMusic.playOnAwake = false;
+        DontDestroyOnLoad(backGroundMusicSlide.gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
     }
 
 
@@ -300,24 +320,6 @@ public class UpdatedMasterMovement : MonoBehaviour
 
 
     }
-    //
-    //    void OnDrawGizmosSelected()
-    //    {
-    //        if (showDebug)
-    //        {
-    //            // Visualize SphereCast with two spheres and a line
-    //            Vector3 startPoint = new Vector3(transform.position.x, transform.position.y - (mover.height / 2) + startDistanceFromBottom, transform.position.z);
-    //            Vector3 endPoint = new Vector3(transform.position.x, transform.position.y - (mover.height / 2) + startDistanceFromBottom - sphereCastDistance, transform.position.z);
-    //
-    //            Gizmos.color = Color.white;
-    //            Gizmos.DrawWireSphere(startPoint, sphereCastRadius);
-    //
-    //            Gizmos.color = Color.gray;
-    //            Gizmos.DrawWireSphere(endPoint, sphereCastRadius);
-    //
-    //            Gizmos.DrawLine(startPoint, endPoint);
-    //        }
-    //    }
 
 
     public void DoMove()

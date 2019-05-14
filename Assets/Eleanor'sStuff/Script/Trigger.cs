@@ -9,12 +9,12 @@ public class Trigger : MonoBehaviour
     public bool Slide;
     public bool ResetPosition;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         UpdatedMasterMovement.Singleton.OnSlide = Slide;
         UpdatedMasterMovement.Singleton.Anim.SetBool("Slide", Slide);
-        if (ResetPosition)
-            UpdatedMasterMovement.Singleton.transform.position = UpdatedMasterMovement.Singleton.StartPos;
+        if (ResetPosition) UpdatedMasterMovement.Singleton.Reset();
+        Debug.Log(name);
     }
 
 }
