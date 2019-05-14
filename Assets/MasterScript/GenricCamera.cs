@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
+
 
 public class GenricCamera : MonoBehaviour
 {
@@ -12,9 +12,12 @@ public class GenricCamera : MonoBehaviour
     public float camDistance = 10;
     public float playerHeight;
 
+    public Vector3 Slope;
+    public static GenricCamera Singleton;
+
     void Start()
     {
-        
+        GenricCamera.Singleton = this;
     }
 
 
@@ -23,7 +26,29 @@ public class GenricCamera : MonoBehaviour
         heading += Input.GetAxis("Mouse X") * Time.deltaTime * 180;
         tilt += Input.GetAxis("Mouse Y") * Time.deltaTime * 180;
 
-        tilt = Mathf.Clamp(tilt,-80,80);
+        
+        
+        
+        // Lock Camera Pos 
+
+        if (!UpdatedMasterMovement.Singleton.OnSlide)
+        {
+            tilt = Mathf.Clamp(tilt,-20,80);
+        }
+        else
+        {
+            tilt = Mathf.Clamp(tilt,-5,80);
+  //          Vector2 flattenedSlope = new Vector2(Slope.x, Slope.z);
+
+ //           float temp = Vector2.Angle(flattenedSlope, Vector2.up);
+            float temp = player.transform.localEulerAngles.y;
+            
+            heading  = Mathf.Clamp(heading,temp-5,temp+5);
+        }
+        
+        
+        
+        
         
         transform.rotation = Quaternion.Euler(tilt, heading, 0);
 
@@ -31,6 +56,6 @@ public class GenricCamera : MonoBehaviour
         transform.position = player.position - transform.forward * camDistance + Vector3.up * playerHeight;
         
         
-        // Lock Camera Pos 
+
     }
 }

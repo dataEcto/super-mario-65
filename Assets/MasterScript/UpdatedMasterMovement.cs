@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Cinemachine;
-using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -110,6 +109,7 @@ public class UpdatedMasterMovement : MonoBehaviour
     
     
     public Animator Anim;
+    public Vector3 StartPos;
 
 
 
@@ -138,7 +138,8 @@ public class UpdatedMasterMovement : MonoBehaviour
 
         marioMovement = GetComponent<AudioSource>();
         isplayed = false;
-       
+        StartPos = transform.position;
+
 
     }
 
@@ -164,6 +165,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         else
         {
             Vector3 temp = velocity + Quaternion.Euler(0, 0, groundSlopeAngle) * new Vector3(velocity.x, 0, velocity.z);
+            GenricCamera.Singleton.Slope = temp;
             velocity = temp.normalized * slideSpeed + Vector3.down * 20;
 
 
@@ -238,6 +240,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         if (Physics.Raycast(transform.position, -Vector3.up, out hit, maxDistance))
         {
             grounded = true;
+            
         }
         else
         {
@@ -378,6 +381,7 @@ public class UpdatedMasterMovement : MonoBehaviour
                 velocity = Vector3.up * movementMultiplier;
                 JumpCount = JumpCount - 1;
                 marioJump.Play();
+                Anim.SetTrigger("Jump");
             }
 
 
@@ -387,6 +391,7 @@ public class UpdatedMasterMovement : MonoBehaviour
         if (grounded == true)
         {
             JumpCount = 1;
+            
         }
 
     }
@@ -470,6 +475,11 @@ public class UpdatedMasterMovement : MonoBehaviour
             Victory.Play();
             itsme.Play();
         }
+        
+        if (collision.gameObject.CompareTag("star"))
+        {
+           Debug.Log("FINISH");
+        }
 
     }
 
@@ -483,7 +493,6 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
         else
         {
-
             if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) ||
                  Input.GetKey(KeyCode.D)))
             {
@@ -499,6 +508,9 @@ public class UpdatedMasterMovement : MonoBehaviour
         }
 
     }
+
+    
+    
 }
 
 

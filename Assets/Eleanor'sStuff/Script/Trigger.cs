@@ -7,11 +7,14 @@ using UnityEditor;
 public class Trigger : MonoBehaviour
 {
     public bool Slide;
+    public bool ResetPosition;
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         UpdatedMasterMovement.Singleton.OnSlide = Slide;
         UpdatedMasterMovement.Singleton.Anim.SetBool("Slide", Slide);
+        if (ResetPosition)
+            UpdatedMasterMovement.Singleton.transform.position = UpdatedMasterMovement.Singleton.StartPos;
     }
 
 }
